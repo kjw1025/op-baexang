@@ -1,9 +1,5 @@
 @charset 'utf-8';
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap');
-
-/* @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap'); */
 /*  === 초기화 ===*/
 
 * {
@@ -17,7 +13,8 @@ a {
   text-decoration: none;
 }
 
-ul,li {
+ul,
+li {
   list-style: none;
 }
 
@@ -31,13 +28,14 @@ html {
 }
 
 body {
-  font-family: 'EB Garamond', 'Noto Sans KR','Noto Serif KR', sans-serif;
+  font-family: 'EB Garamond', 'Noto Sans KR', 'Noto Serif KR', sans-serif;
 
   font-size: 16px;
   font-weight: 400;
   /* line-height: 1.6; */
   letter-spacing: -0.4px;
 }
+
 /* === 공통 ===*/
 .container {
   position: relative;
@@ -60,6 +58,11 @@ body {
   display: block;
   width: 100%;
   clear: both;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
 }
 
 
@@ -94,6 +97,7 @@ body {
   height: 100%;
   float: left;
 }
+
 .top-gnb ul {
   position: relative;
   display: inline-flex;
@@ -101,20 +105,32 @@ body {
   justify-content: left;
   height: 100%;
 }
+
 .top-gnb ul li {
   position: relative;
   display: block;
   margin-left: 37px;
 }
+
 .top-gnb ul li:first-child {
   margin-left: 0;
 }
+
 .top-gnb ul li a {
   display: block;
   font-size: 16px;
   color: #333;
   line-height: 20px;
 }
+
+/* .top-gnb ul li a  호버 효과 */
+.top-gnb ul li a:hover {
+  color: #000;
+  font-weight: 600;
+}
+
+/* /////.top-gnb ul li a  호버 효과 */
+
 
 
 .logo {
@@ -124,6 +140,7 @@ body {
   margin-left: -73px;
   margin-top: -22.5px;
 }
+
 .logo a {
   position: relative;
   display: block;
@@ -139,6 +156,7 @@ body {
   height: 100%;
   float: right;
 }
+
 .top-info ul {
   position: relative;
   display: inline-flex;
@@ -146,11 +164,13 @@ body {
   justify-content: right;
   height: 100%;
 }
+
 .top-info ul li {
   position: relative;
   display: block;
   margin-left: 37px;
 }
+
 .top-info ul li a {
   display: block;
   font-size: 16px;
@@ -158,7 +178,9 @@ body {
   line-height: 20px;
   font-weight: 500;
 }
+
 .top-info ul li a span {
+  font-family: 'Noto Sans KR';
   font-size: 16px;
   color: #c9ab81;
   line-height: 1;
@@ -172,6 +194,7 @@ body {
   height: 20px;
   background: url('../images/icon/ico-header-search.png') no-repeat center;
 }
+
 /* //header */
 
 
@@ -187,6 +210,7 @@ body {
   width: 100%;
   height: 762px;
 }
+
 .sw-visual a {
   position: relative;
   display: block;
@@ -198,9 +222,11 @@ body {
 .vs-1 {
   background-color: violet;
 }
+
 .vs-2 {
   background-color: aquamarine;
 }
+
 .vs-3 {
   background-color: cadetblue;
 }
@@ -214,12 +240,14 @@ body {
   height: 100%;
   z-index: 99999;
 }
+
 .vs-text p {
   position: relative;
   display: block;
   font-size: 24px;
   color: #fff;
 }
+
 .vs-text h2 {
   position: relative;
   display: block;
@@ -239,6 +267,7 @@ body {
   height: 140px;
   z-index: 99;
 }
+
 /* //main slider */
 
 
@@ -254,26 +283,53 @@ body {
   background-color: #fff;
   height: 392px;
   padding-top: 180px;
-} 
+  text-align: center;
+}
+
 .b-art-text p {
   position: relative;
   display: block;
-  text-align: center;
   font-family: 'Noto Serif KR';
   font-size: 20px;
   color: #c9ab81;
   letter-spacing: -1px;
   margin-bottom: 20px;
 }
-.b-art-text h2 {  
+
+.b-art-text h2 {
   position: relative;
-  display: block;
+  display: inline-block;
   font-size: 50px;
   text-align: center;
   color: #211e1f;
   font-weight: 500;
   letter-spacing: 5.5px;
+  padding: 0 80px;
 }
+
+/* .b-art-text h2  사이드바*/
+.b-art-text h2::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-top: -0.5px;
+  width: 170px;
+  height: 1px;
+  background: #211e1f;
+}
+.b-art-text h2::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -0.5px;
+  width: 170px;
+  height: 1px;
+  background: #211e1f;
+}
+
+/* ////.b-art-text h2  사이드바*/
 
 .b-art-slider-box {
   position: relative;
@@ -287,7 +343,6 @@ body {
   display: block;
   width: 327px;
   height: 700px;
-  background-color: rgb(240, 140, 140);
 }
 
 .b-art-pobox div {
@@ -296,6 +351,7 @@ body {
   width: 327px;
   height: 450px;
 }
+
 .b-art-pobox a {
   position: relative;
   display: block;
@@ -304,6 +360,7 @@ body {
   font-weight: 600;
   margin-top: 30px;
 }
+
 .b-art-pobox span {
   position: relative;
   display: block;
@@ -312,6 +369,7 @@ body {
   margin-top: 25px;
   color: #c9ab81;
 }
+
 .b-art-pobox p {
   position: relative;
   display: block;
@@ -321,6 +379,7 @@ body {
   margin-top: 20px;
   margin-bottom: 30px;
 }
+
 .b-art-pobox h5 {
   position: relative;
   display: block;
@@ -329,6 +388,7 @@ body {
   font-family: 'Noto Serif KR';
   font-weight: 500;
 }
+
 .b-art-pobox h5 strong {
   font-family: 'EB Garamond';
   font-size: 36px;
@@ -341,22 +401,41 @@ body {
   background: url('../images/pobox\ img\ 1.jpg') no-repeat center;
   background-size: cover;
 }
+
 .pobox-2 {
   background: url('../images/pobox\ img\ 2.jpg') no-repeat center;
   background-size: cover;
 }
+
 .pobox-3 {
   background: url('../images/pobox\ img\ 3.jpg') no-repeat center;
   background-size: cover;
 }
+
 .pobox-4 {
   background: url('../images/pobox\ img\ 4.jpg') no-repeat center;
   background-size: cover;
 }
+
 .pobox-5 {
   background: url('../images/pobox\ img\ 5.jpg') no-repeat center;
   background-size: cover;
 }
+
+/* 베스트 아트 nav */
+.sw-b_art-prev {
+  background: url('../images/nav\ prev.png') no-repeat center;
+  position: absolute;
+  top: 320px;
+  left: -100px;
+}
+.sw-b_art-next {
+  background: url('../images/nav-next.png') no-repeat center;
+  position: absolute;
+  top: 320px;
+  right: -95px;
+}
+/* //베스트 아트 nav */
 
 .a-pagintion {
   position: relative;
@@ -366,7 +445,7 @@ body {
 }
 
 /* //best art */
-  
+
 
 /* md pick */
 .md-pick {
@@ -384,34 +463,60 @@ body {
 .md-p-text {
   position: relative;
   display: block;
-  height: 240px;
+  height: 240px;  
+  text-align: center;
 }
 
 .md-p-text p {
   position: relative;
   display: block;
   font-family: 'Noto Serif KR';
-  text-align: center;
   font-size: 20px;
   color: #c9ab81;
   letter-spacing: -1px;
   margin-bottom: 20px;
 }
-.md-p-text h2 {  
+
+.md-p-text h2 {
   position: relative;
-  display: block;
-  text-align: center;
+  display: inline-block;
   font-size: 50px;
   color: #211e1f;
   font-weight: 500;
   letter-spacing: 5.5px;
+  padding: 0 80px;
 }
+
+/* .b-art-text h2  사이드바*/
+.md-p-text h2::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-top: -0.5px;
+  width: 170px;
+  height: 1px;
+  background: #211e1f;
+}
+.md-p-text h2::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -0.5px;
+  width: 170px;
+  height: 1px;
+  background: #211e1f;
+}
+
+/* ///.b-art-text h2  사이드바*/
 
 .art-select {
   position: relative;
   display: block;
   text-align: center;
 }
+
 .art-select a {
   color: #333;
   font-weight: 500;
@@ -443,6 +548,7 @@ body {
   background-size: 100%;
   box-shadow: 1px 1px 10px rgb(0 0 0 / 20%);
 }
+
 .md-main-text {
   position: relative;
   display: flex;
@@ -453,6 +559,7 @@ body {
   float: right;
   padding: 0 80px 0 60px;
 }
+
 .md-main-text span {
   position: relative;
   display: block;
@@ -475,6 +582,7 @@ body {
   font-weight: 700;
   line-height: 46px;
 }
+
 .md-main-text p span {
   position: relative;
   display: block;
@@ -495,6 +603,7 @@ body {
   display: block;
   height: 50px;
 }
+
 /* //md pick */
 
 
@@ -503,33 +612,57 @@ body {
   position: relative;
   display: block;
 }
+
 .new-a-text {
   position: relative;
   display: block;
-  background-color: rgb(153, 97, 255);
   height: 292px;
   padding-top: 100px;
+  text-align: center;
 }
 
 .new-a-text p {
   position: relative;
   display: block;
-  text-align: center;
   font-family: 'Noto Serif KR';
   font-size: 20px;
   color: #c9ab81;
   letter-spacing: -1px;
   margin-bottom: 20px;
 }
-.new-a-text h2 {  
+
+.new-a-text h2 {
   position: relative;
-  display: block;
-  text-align: center;
+  display: inline-block;
   font-size: 50px;
   color: #211e1f;
   font-weight: 500;
   letter-spacing: 5.5px;
+  padding: 0 80px;
 }
+/*.new-a-text h2  사이드바*/
+.new-a-text h2::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-top: -0.5px;
+  width: 170px;
+  height: 1px;
+  background: #211e1f;
+}
+.new-a-text h2::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -0.5px;
+  width: 170px;
+  height: 1px;
+  background: #211e1f;
+}
+
+/* ///.b-art-text h2  사이드바*/
 
 .n-art-slider-box {
   position: relative;
@@ -559,18 +692,22 @@ body {
   background: url('../images/newart\ img\ 1.jpg') no-repeat center;
   background-size: cover;
 }
+
 .nai-2 {
   background: url('../images/newart\ img\ 2.jpg') no-repeat center;
   background-size: cover;
 }
+
 .nai-3 {
   background: url('../images/newart\ img\ 3.jpg') no-repeat center;
   background-size: cover;
 }
+
 .nai-4 {
   background: url('../images/newart\ img\ 4.jpg') no-repeat center;
   background-size: cover;
 }
+
 .nai-5 {
   background: url('../images/newart\ img\ 5.jpg') no-repeat center;
   background-size: cover;
@@ -592,6 +729,7 @@ body {
   background-color: rgb(255, 255, 255);
   padding-top: 20px;
 }
+
 .nat1 span {
   position: relative;
   display: block;
@@ -600,6 +738,7 @@ body {
   color: #c9ab81;
   letter-spacing: -0.7px;
 }
+
 .nat1 h4 {
   position: relative;
   display: block;
@@ -620,9 +759,25 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
+
+/* 뉴 아트 nav */
+.sw-n_art-prev {
+  background: url('../images/nav\ prev.png') no-repeat center;
+  position: absolute;
+  top: 382px;
+  left: -100px;
+}
+.sw-n_art-next {
+  background: url('../images/nav-next.png') no-repeat center;
+  position: absolute;
+  top: 382px;
+  right: -100px;
+}
+/* //뉴 아트 nav */
+
 /* //new art */
 
 
@@ -645,7 +800,7 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50% , -50%);
+  transform: translate(-50%, -50%);
   display: block;
   width: 1400px;
   height: 370px;
@@ -654,6 +809,7 @@ body {
   text-align: center;
   padding: 80px 20px;
 }
+
 .gallbox span {
   position: relative;
   display: block;
@@ -662,6 +818,7 @@ body {
   line-height: 50px;
   font-weight: 600;
 }
+
 .gallbox p {
   position: relative;
   display: block;
@@ -672,11 +829,13 @@ body {
   letter-spacing: -0.5px;
   margin-top: 30px;
 }
+
 .gallbox a {
   position: relative;
   display: block;
   margin-top: 60px;
 }
+
 /* //more gallery */
 
 
@@ -692,9 +851,9 @@ body {
   display: block;
   width: 100%;
   text-align: center;
-  background-color: aqua;
   margin-bottom: 90px;
 }
+
 .review-text p {
   position: relative;
   display: block;
@@ -704,14 +863,39 @@ body {
   letter-spacing: -1px;
   margin-bottom: 12px;
 }
+
 .review-text h2 {
   position: relative;
-  display: block;
+  display: inline-block;
   font-size: 50px;
   color: #211e1f;
   font-weight: 500;
   letter-spacing: 5.5px;
+  padding: 0 80px;
 }
+/*.review-text h2  사이드바*/
+.review-text h2::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  margin-top: -0.5px;
+  width: 170px;
+  height: 1px;
+  background: #211e1f;
+}
+.review-text h2::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -0.5px;
+  width: 170px;
+  height: 1px;
+  background: #211e1f;
+}
+
+/* ///..review-text h2  사이드바*/
 
 
 .r-slider-box {
@@ -737,16 +921,20 @@ body {
   background-color: #fff;
   z-index: 99;
 }
+
 .rev-r-top p {
   position: relative;
   display: block;
   text-align: center;
+  font-family: "Noto Sans KR";
   font-size: 13px;
   color: #c9ab81;
 }
+
 .rev-r-top p strong {
   font-size: 24px;
   line-height: 30px;
+  letter-spacing: -1.5px;
 }
 
 .revbox-1 {
@@ -757,6 +945,7 @@ body {
   background: url('../images/rev\ img\ 1.png') no-repeat center;
   background-size: cover;
 }
+
 .revbox-2 {
   position: relative;
   display: block;
@@ -765,6 +954,7 @@ body {
   background: url('../images/rev\ img\ 2.png') no-repeat center;
   background-size: cover;
 }
+
 .revbox-3 {
   position: relative;
   display: block;
@@ -784,9 +974,11 @@ body {
 .re-text-sml h5 span {
   position: relative;
   display: inline-block;
+  font-family: "Noto Sans KR";
   font-size: 15px;
   color: #c9ab81;
 }
+
 .rtsml-t {
   position: relative;
   display: block;
@@ -794,20 +986,39 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
+
 .rtsml-t p {
   position: relative;
   display: block;
-  color: #666;
+  color: #666666;
+  line-height: 26px;
 }
+
 .re-text-sml a {
   position: relative;
   display: block;
   font-size: 18px;
   margin-top: 30px;
 }
+
+/* 리뷰 nav */
+.sw-r_art-prev {
+  background: url('../images/nav\ prev.png') no-repeat center;
+  position: absolute;
+  top: 268px;
+  left: -100px;
+}
+.sw-r_art-next {
+  background: url('../images/nav-next.png') no-repeat center;
+  position: absolute;
+  top: 268px;
+  right: -100px;
+}
+/* //리뷰 nav */
+
 /* //review */
 
 
@@ -819,6 +1030,7 @@ body {
   height: 264px;
   padding: 60px 0;
 }
+
 .footer .inner {
   position: relative;
   display: block;
@@ -829,24 +1041,67 @@ body {
   font-weight: 500;
   line-height: 26px;
 }
+
 .footer .inner ul {
   margin-bottom: 30px;
 }
+
 .footer .inner ul li {
   position: relative;
   display: block;
   float: left;
   margin-right: 25px;
 }
+
 .footer .inner ul li a {
   font-size: 16px;
   color: #888888;
   font-weight: 500;
 }
+
 .footer .inner p {
   position: relative;
   display: block;
   margin-top: 20px;
+  font-family: 'Noto Sans KR';
+  font-weight: 500;
+  letter-spacing: -0.5px;
 }
-/* //footer */
 
+.copyright {
+  color: #888;
+  line-height: 26px;
+  font-weight: 500;
+  font-family: 'EB Garamond';
+  letter-spacing: -0.5px;
+}
+
+
+.gotop-icon {
+  position: absolute;
+  right: 25px;
+  bottom: 25px;
+  display: block;
+}
+
+.gotop-icon a {
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: #c9ab81;
+}
+
+.gotop-icon a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -5px;
+  margin-top: -7.5px;
+  width: 10px;
+  height: 15px;
+  background: url('../images/ico-go-top.png') no-repeat center;
+}
+
+/* //footer */
