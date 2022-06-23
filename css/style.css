@@ -31,22 +31,18 @@ html {
 }
 
 body {
-  /* font-family: 'EB Garamond' */
-  /* font-family: 'Noto Sans KR', 'Noto Serif KR', 'EB Garamond', 'Malgun Gothic', dotum, sans-serif; */
-  font-family: 'Noto Sans KR', sans-serif;
-  font-family: 'EB Garamond', serif;
-
+  font-family: 'EB Garamond', 'Noto Sans KR','Noto Serif KR', sans-serif;
 
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.6;
+  /* line-height: 1.6; */
   letter-spacing: -0.4px;
 }
 /* === 공통 ===*/
 .container {
   position: relative;
   display: block;
-  width: 1822px;
+  width: 1820px;
   height: 6500px;
   background-color: rgb(241, 206, 206);
   margin: 0 auto;
@@ -105,14 +101,21 @@ body {
   justify-content: left;
   height: 100%;
 }
-.top-gnb li {
+.top-gnb ul li {
   position: relative;
   display: block;
   margin-left: 37px;
 }
-.top-gnb li:first-child {
+.top-gnb ul li:first-child {
   margin-left: 0;
 }
+.top-gnb ul li a {
+  display: block;
+  font-size: 16px;
+  color: #333;
+  line-height: 20px;
+}
+
 
 .logo {
   position: absolute;
@@ -149,8 +152,16 @@ body {
   margin-left: 37px;
 }
 .top-info ul li a {
+  display: block;
   font-size: 16px;
+  color: #333;
+  line-height: 20px;
   font-weight: 500;
+}
+.top-info ul li a span {
+  font-size: 16px;
+  color: #c9ab81;
+  line-height: 1;
 }
 
 .r-t-icon {
@@ -201,7 +212,6 @@ body {
   display: block;
   width: 1400px;
   height: 100%;
-  /* background-color: green; */
   z-index: 99999;
 }
 .vs-text p {
@@ -215,7 +225,19 @@ body {
   display: block;
   font-size: 60px;
   color: #fff;
+  font-weight: 600;
   margin-top: 40px;
+}
+
+.sw-visual-pgbox {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  background-color: rgb(29, 29, 172);
+  width: 910px;
+  height: 140px;
+  z-index: 99;
 }
 /* //main slider */
 
@@ -236,11 +258,11 @@ body {
 .b-art-text p {
   position: relative;
   display: block;
-  font-size: 20px;
   text-align: center;
+  font-family: 'Noto Serif KR';
+  font-size: 20px;
   color: #c9ab81;
   letter-spacing: -1px;
-  font-weight: 900;
   margin-bottom: 20px;
 }
 .b-art-text h2 {  
@@ -277,34 +299,42 @@ body {
 .b-art-pobox a {
   position: relative;
   display: block;
+  font-family: 'Noto Serif KR';
   font-size: 24px;
+  font-weight: 600;
   margin-top: 30px;
 }
 .b-art-pobox span {
   position: relative;
   display: block;
   font-size: 16px;
+  font-family: 'Noto Serif KR';
   margin-top: 25px;
   color: #c9ab81;
 }
 .b-art-pobox p {
   position: relative;
   display: block;
+  font-family: "Noto Sans KR";
   font-size: 16px;
+  color: #888;
   margin-top: 20px;
   margin-bottom: 30px;
-  color: #888;
 }
 .b-art-pobox h5 {
   position: relative;
   display: block;
   font-size: 20px;
+  color: #333333;
+  font-family: 'Noto Serif KR';
+  font-weight: 500;
 }
 .b-art-pobox h5 strong {
+  font-family: 'EB Garamond';
   font-size: 36px;
+  font-weight: 500;
   color: #333333;
   margin-right: 5px;
-  font-weight: 500;
 }
 
 .pobox-1 {
@@ -348,33 +378,123 @@ body {
   background: url('../images/pick-bg.jpg') no-repeat center;
   background-size: cover;
   height: 1052px;
+  padding: 100px 0 210px;
 }
 
 .md-p-text {
   position: relative;
   display: block;
-  background-color: rgb(153, 97, 255);
-  height: 392px;
-  padding-top: 180px;
+  height: 240px;
 }
 
 .md-p-text p {
   position: relative;
   display: block;
-  font-size: 20px;
+  font-family: 'Noto Serif KR';
   text-align: center;
+  font-size: 20px;
   color: #c9ab81;
+  letter-spacing: -1px;
   margin-bottom: 20px;
 }
 .md-p-text h2 {  
   position: relative;
   display: block;
-  font-size: 50px;
   text-align: center;
+  font-size: 50px;
   color: #211e1f;
+  font-weight: 500;
+  letter-spacing: 5.5px;
+}
+
+.art-select {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+.art-select a {
+  color: #333;
   font-weight: 500;
 }
 
+.art-select span {
+  margin: 0 20px;
+  color: #dddddd;
+}
+
+.md-mainbox {
+  position: relative;
+  display: block;
+  width: 1340px;
+  height: 500px;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.13);
+}
+
+.md-main-img {
+  position: absolute;
+  top: 60px;
+  left: -60px;
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: url('../images/md\ pick\ img.1.jpg') no-repeat center;
+  background-size: 100%;
+  box-shadow: 1px 1px 10px rgb(0 0 0 / 20%);
+}
+.md-main-text {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  float: right;
+  padding: 0 80px 0 60px;
+}
+.md-main-text span {
+  position: relative;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 8px;
+  font-family: 'Noto Serif KR';
+  font-size: 16px;
+  color: #c9ab81;
+  letter-spacing: -0.7px;
+  line-height: 26px;
+}
+
+.md-main-text p b {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+  font-family: 'Noto Serif KR';
+  font-size: 36px;
+  color: #333333;
+  font-weight: 700;
+  line-height: 46px;
+}
+.md-main-text p span {
+  position: relative;
+  display: block;
+  max-height: 78px;
+  font-family: 'Noto Sans KR';
+  font-size: 16px;
+  color: #666666;
+  line-height: 26px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.md-main-text a {
+  position: relative;
+  display: block;
+  height: 50px;
+}
 /* //md pick */
 
 
@@ -387,10 +507,29 @@ body {
   position: relative;
   display: block;
   background-color: rgb(153, 97, 255);
-  height: 392px;
-  padding-top: 180px;
+  height: 292px;
+  padding-top: 100px;
 }
 
+.new-a-text p {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-family: 'Noto Serif KR';
+  font-size: 20px;
+  color: #c9ab81;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+.new-a-text h2 {  
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 50px;
+  color: #211e1f;
+  font-weight: 500;
+  letter-spacing: 5.5px;
+}
 
 .n-art-slider-box {
   position: relative;
@@ -445,22 +584,6 @@ body {
   width: 100%;
 }
 
-.new-a-text p {
-  position: relative;
-  display: block;
-  font-size: 20px;
-  text-align: center;
-  color: #c9ab81;
-  margin-bottom: 20px;
-}
-.new-a-text h2 {  
-  position: relative;
-  display: block;
-  font-size: 50px;
-  text-align: center;
-  color: #211e1f;
-  font-weight: 500;
-}
 
 .nat1 {
   position: relative;
@@ -473,19 +596,24 @@ body {
   position: relative;
   display: block;
   margin-bottom: 10px;
+  font-family: 'Noto Serif KR';
   color: #c9ab81;
+  letter-spacing: -0.7px;
 }
 .nat1 h4 {
   position: relative;
   display: block;
+  font-family: 'Noto Serif KR';
   font-size: 24px;
   color: #333;
+  font-weight: 600;
 }
 
 .newart-textbox p {
   position: relative;
   display: block;
   height: 78px;
+  font-family: 'Noto Sans KR';
   color: #666;
   line-height: 26px;
   margin-top: 25px;
@@ -537,8 +665,11 @@ body {
 .gallbox p {
   position: relative;
   display: block;
+  font-family: 'Noto Serif KR';
   font-size: 18px;
   color: #333;
+  font-weight: 500;
+  letter-spacing: -0.5px;
   margin-top: 30px;
 }
 .gallbox a {
@@ -567,8 +698,10 @@ body {
 .review-text p {
   position: relative;
   display: block;
+  font-family: 'Noto Serif KR';
   font-size: 20px;
   color: #c9ab81;
+  letter-spacing: -1px;
   margin-bottom: 12px;
 }
 .review-text h2 {
@@ -576,6 +709,8 @@ body {
   display: block;
   font-size: 50px;
   color: #211e1f;
+  font-weight: 500;
+  letter-spacing: 5.5px;
 }
 
 
