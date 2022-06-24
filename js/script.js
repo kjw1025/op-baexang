@@ -19,7 +19,21 @@ window.onload = function(){
   let sw_best_art = new Swiper('.sw-best_art', {
     slidesPerView: 4,
     spaceBetween: 10,
+    
+    // nav
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    
+    //pg
+    pagination: {
+      el: ".swiper-pagination",
+    },
   });
+
+
+  
 
 
     // 뉴 아트 슬라이드
@@ -27,6 +41,13 @@ window.onload = function(){
     slidesPerView: 3,
     spaceBetween: 30,
     slidesPerGroup: 3,
+
+    // nav
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
   });
 
 
@@ -34,7 +55,29 @@ window.onload = function(){
   let sw_rev = new Swiper('.sw-rev', {
     slidesPerView: 3,
     spaceBetween: 30,
-  })
+    
+    // nav
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  
+    //pg
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  
+  });
+
+  
+  
+  // gotop
+  let gotop_icon = $('.gotop-icon');
+  gotop_icon.click(function(){
+    $('html').animate({scrollTop:0}, 1000);
+
+  });
+  
 
 
 }
