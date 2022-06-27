@@ -160,7 +160,6 @@ body {
   font-weight: 700;
   line-height: 36px;
   letter-spacing: -0.7px;
-
 }
 
 /* sub메뉴 */
@@ -169,15 +168,18 @@ body {
   font-style: italic;
 }
 
+.l-m-w-inner > ul > li:hover .submenu {
+  visibility: visible;
+}
+
 .submenu {
   position: absolute;
   right: 0;
-  top: 30px;
+  top: 10px;
   display: block;
   width: 280px;
   height: 300px;
-  /* opacity: 0;
-  visibility: hidden; */
+  visibility: hidden;
 }
 
 .submenu li {
