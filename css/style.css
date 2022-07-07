@@ -94,19 +94,32 @@ body {
   z-index: 9998;
   width: 100vw;
   height: 100vh;
+  background-color: rgba(0, 0, 0, 0);
+  visibility: hidden;
+
+  transition: all 0.7s;
+}
+
+.left-menu-dim-open {
+  visibility: visible;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* <!-- 메뉴내용 --> */
 .left-menu-wrap {
   position: fixed;
-  left: 0px;
+  left: -640px;
   top: 0;
   display: block;
   z-index: 99999;
   width: 640px;
   height: 100vh;
   background-color: #fff;
+  transition: all 0.7s;
+}
+
+.left-menu-wrap-open {
+  left: 0;
 }
 
 .l-m-w-inner {
@@ -138,20 +151,21 @@ body {
   background-size: cover;
 }
 
-.l-m-w-inner > ul {
-  padding-top: 100px;
+.l-m-w-inner>ul {
+  margin-top: 100px;
   padding-bottom: 50px;
   height: 100%;
+  overflow-y: auto;
 }
 
-.l-m-w-inner > ul > li {
+.l-m-w-inner>ul>li {
   position: relative;
   display: block;
   height: 80px;
   padding-right: 300px;
 }
 
-.l-m-w-inner > ul > li > a {
+.l-m-w-inner>ul>li>a {
   position: relative;
   display: block;
   padding: 22px 0;
@@ -160,15 +174,16 @@ body {
   font-weight: 700;
   line-height: 36px;
   letter-spacing: -0.7px;
+  transition: all 0.3s;
 }
 
 /* sub메뉴 */
-.l-m-w-inner > ul > li > a:hover {
+.l-m-w-inner>ul>li>a:hover {
   color: #c9ab81;
   font-style: italic;
 }
 
-.l-m-w-inner > ul > li:hover .submenu {
+.l-m-w-inner>ul>li:hover .submenu {
   visibility: visible;
 }
 
@@ -185,7 +200,8 @@ body {
 .submenu li {
   margin-top: 22px;
 }
-.submenu > li > a {
+
+.submenu>li>a {
   position: relative;
   font-size: 16px;
   color: #333333;
@@ -193,7 +209,7 @@ body {
   letter-spacing: -0.5px;
 }
 
-.submenu > li > a:hover {
+.submenu>li>a:hover {
   color: #c9ab81;
 }
 
@@ -255,9 +271,11 @@ body {
   color: #666;
   line-height: 26px;
 }
+
 .l-m-info ul li a:hover {
   color: #c9ab81;
 }
+
 /* <!-- //왼쪽 상단 메뉴 --> */
 
 
@@ -403,15 +421,18 @@ body {
 
 
 .vs-1 {
-  background-color: violet;
+  background: url('../images/visual.bg.1.jpg') no-repeat center;
+  background-size: cover;
 }
 
 .vs-2 {
-  background-color: aquamarine;
+  background: url('../images/visual.bg.2.jpg') no-repeat center;
+  background-size: cover;
 }
 
 .vs-3 {
-  background-color: cadetblue;
+  background: url('../images/visual.bg.3.jpg') no-repeat center;
+  background-size: cover;
 }
 
 .vs-text {
@@ -529,14 +550,14 @@ body {
   height: 700px;
 }
 
-.b-art-pobox div {
+.b-art-pobox > div {
   position: relative;
   display: block;
   width: 327px;
   height: 450px;
 }
 
-.b-art-pobox a {
+.b-art-pobox > a {
   position: relative;
   display: block;
   font-family: 'Noto Serif KR';
@@ -545,7 +566,7 @@ body {
   margin-top: 30px;
 }
 
-.b-art-pobox span {
+.b-art-pobox > span {
   position: relative;
   display: block;
   font-size: 16px;
@@ -621,6 +642,8 @@ body {
   right: -95px;
 }
 
+
+
 /* //베스트 아트 nav */
 
 .b-art-pagintion {
@@ -652,6 +675,85 @@ body {
   background-color: #333;
   transform: scale(1.4);
 }
+
+/* b-art-hovertag  */
+.b-art-hovertag {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  display: block;
+  width: 267px;
+  height: 390px;
+  background-color: rgba(255, 255, 255, 0.8);
+  visibility: hidden;
+}
+
+.add-bt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: 160px;
+  height: 45px;
+  border: 1px solid #c9ab81;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 45px;
+}
+.under-bt {
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.icon-eye {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url('../images/icon/ico-sight.png') no-repeat center;
+}
+.icon-eye:hover {
+  background: url('../images/icon/ico-sight-on.png') no-repeat center;
+}
+.icon-heart {
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url('../images/icon/ico-like.png') no-repeat center;
+  margin-left: 42px;
+}
+.icon-heart:hover {
+  background: url('../images/icon/ico-like-on.png') no-repeat center;
+}
+.icon-heart::after {
+  content: "";
+  position: absolute;
+  left: -22px;
+  top: 2px;
+  width: 2px;
+  height: 16px;
+  background-color: #aaa;
+}
+
+
+/* //b-art-hovertag  */
+
+
+.pobox-1:hover .b-art-hovertag {
+  visibility: visible;
+}
+
+
+
+
+
 
 /* //best art */
 
@@ -1315,7 +1417,7 @@ body {
 
 
 .gotop-icon {
-  position: absolute;
+  position: fixed;
   right: 25px;
   bottom: 25px;
   display: block;
