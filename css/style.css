@@ -84,12 +84,12 @@ body {
 
 /* <!-- 왼쪽 상단 메뉴 --> */
 
-/* <!-- 가림막 --> */
-
-.left-menu-dim {
+/* <!--  wrap and 가림막 --> */
+.l-t-m-div {
   position: fixed;
   left: 0;
   top: 0;
+<<<<<<< HEAD
   display: block;
   z-index: 9998;
   width: 100vw;
@@ -102,8 +102,22 @@ body {
 
 .left-menu-dim-open {
   visibility: visible;
+=======
+  display: none;
+  width: 100%;
+  height: 100%;
+>>>>>>> cdf08ec1017042535c9b7f02e950134d696eec68
   background-color: rgba(0, 0, 0, 0.7);
+  z-index: 99999;
 }
+
+.l-t-m-div-bg {
+  position: relative;
+  display: block;
+  width: 640px;
+  height: 100%;
+}
+
 
 /* <!-- 메뉴내용 --> */
 .left-menu-wrap {
@@ -174,6 +188,7 @@ body {
   font-weight: 700;
   line-height: 36px;
   letter-spacing: -0.7px;
+<<<<<<< HEAD
   transition: all 0.3s;
 }
 
@@ -181,16 +196,25 @@ body {
 .l-m-w-inner>ul>li>a:hover {
   color: #c9ab81;
   font-style: italic;
+=======
+
+>>>>>>> cdf08ec1017042535c9b7f02e950134d696eec68
 }
 
 .l-m-w-inner>ul>li:hover .submenu {
   visibility: visible;
 }
+.l-m-w-inner > ul > li > a:hover {
+  color: #c9ab81;
+  font-style: italic;
+}
+
+/* sub메뉴 */
 
 .submenu {
   position: absolute;
   right: 0;
-  top: 10px;
+  top: 15px;
   display: block;
   width: 280px;
   height: 300px;
@@ -976,7 +1000,7 @@ body {
   background: #211e1f;
 }
 
-/* ///.b-art-text h2  사이드바*/
+/* ///.new-a-text  사이드바*/
 
 .n-art-slider-box {
   position: relative;
@@ -1028,7 +1052,7 @@ body {
 
 .newart-textbox {
   position: absolute;
-  top: 545px;
+  top: 550px;
   left: 0;
   display: block;
   width: 100%;

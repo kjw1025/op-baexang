@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 window.onload = function () {
 
 
@@ -15,6 +16,42 @@ window.onload = function () {
     $('.left-menu-wrap').removeClass('left-menu-wrap-open');
     $('.left-menu-dim').removeClass('left-menu-dim-open');
   });
+=======
+// 멀티미디어 요소 로딩 전 실행
+$(document).ready(function () {
+
+  // 왼쪽 상단 메뉴
+  let l_t_m_div = $('.l-t-m-div');
+
+  // 보기 버튼 기능
+  let l_t_icon = $('.l-t-icon');
+  l_t_icon.click(function () {
+    l_t_m_div.show();
+  });
+
+  // 닫기 버튼 기능
+  let close_btn = $('.close-btn');
+  close_btn.click(function () {
+    l_t_m_div.hide();
+  });
+
+  // 배경 누르면 닫기
+  l_t_m_div.click(function () {
+    l_t_m_div.hide();
+  });
+
+  // 내용을 클릭하면 배경 신호 전달 막기
+  $('.l-t-m-div-bg').click(function (event) {
+    // 신호 전달 막기
+    event.stopPropagation();
+  });
+
+
+});
+
+
+
+>>>>>>> cdf08ec1017042535c9b7f02e950134d696eec68
 
 
 
@@ -26,6 +63,16 @@ window.onload = function () {
 
 
 
+<<<<<<< HEAD
+=======
+
+
+window.onload = function () {
+
+
+
+
+>>>>>>> cdf08ec1017042535c9b7f02e950134d696eec68
   // 비주얼 슬라이드
   let sw_visual = new Swiper('.sw-visual', {
     loop: true,
