@@ -84,12 +84,12 @@ body {
 
 /* <!-- 왼쪽 상단 메뉴 --> */
 
-/* <!--  wrap and 가림막 --> */
-.l-t-m-div {
+/* <!-- 가림막 --> */
+
+.left-menu-dim {
   position: fixed;
   left: 0;
   top: 0;
-<<<<<<< HEAD
   display: block;
   z-index: 9998;
   width: 100vw;
@@ -102,22 +102,8 @@ body {
 
 .left-menu-dim-open {
   visibility: visible;
-=======
-  display: none;
-  width: 100%;
-  height: 100%;
->>>>>>> cdf08ec1017042535c9b7f02e950134d696eec68
   background-color: rgba(0, 0, 0, 0.7);
-  z-index: 99999;
 }
-
-.l-t-m-div-bg {
-  position: relative;
-  display: block;
-  width: 640px;
-  height: 100%;
-}
-
 
 /* <!-- 메뉴내용 --> */
 .left-menu-wrap {
@@ -188,7 +174,6 @@ body {
   font-weight: 700;
   line-height: 36px;
   letter-spacing: -0.7px;
-<<<<<<< HEAD
   transition: all 0.3s;
 }
 
@@ -196,25 +181,16 @@ body {
 .l-m-w-inner>ul>li>a:hover {
   color: #c9ab81;
   font-style: italic;
-=======
-
->>>>>>> cdf08ec1017042535c9b7f02e950134d696eec68
 }
 
 .l-m-w-inner>ul>li:hover .submenu {
   visibility: visible;
 }
-.l-m-w-inner > ul > li > a:hover {
-  color: #c9ab81;
-  font-style: italic;
-}
-
-/* sub메뉴 */
 
 .submenu {
   position: absolute;
   right: 0;
-  top: 15px;
+  top: 10px;
   display: block;
   width: 280px;
   height: 300px;
@@ -574,14 +550,14 @@ body {
   height: 700px;
 }
 
-.b-art-pobox > div {
+.b-art-pobox>div {
   position: relative;
   display: block;
   width: 327px;
   height: 450px;
 }
 
-.b-art-pobox > a {
+.b-art-pobox>a {
   position: relative;
   display: block;
   font-family: 'Noto Serif KR';
@@ -590,7 +566,7 @@ body {
   margin-top: 30px;
 }
 
-.b-art-pobox > span {
+.b-art-pobox>span {
   position: relative;
   display: block;
   font-size: 16px;
@@ -726,6 +702,7 @@ body {
   text-align: center;
   line-height: 45px;
 }
+
 .under-bt {
   position: absolute;
   left: 0;
@@ -742,9 +719,11 @@ body {
   height: 20px;
   background: url('../images/icon/ico-sight.png') no-repeat center;
 }
+
 .icon-eye:hover {
   background: url('../images/icon/ico-sight-on.png') no-repeat center;
 }
+
 .icon-heart {
   position: relative;
   display: block;
@@ -753,9 +732,11 @@ body {
   background: url('../images/icon/ico-like.png') no-repeat center;
   margin-left: 42px;
 }
+
 .icon-heart:hover {
   background: url('../images/icon/ico-like-on.png') no-repeat center;
 }
+
 .icon-heart::after {
   content: "";
   position: absolute;
@@ -1000,7 +981,7 @@ body {
   background: #211e1f;
 }
 
-/* ///.new-a-text  사이드바*/
+/* ///.b-art-text h2  사이드바*/
 
 .n-art-slider-box {
   position: relative;
@@ -1052,7 +1033,7 @@ body {
 
 .newart-textbox {
   position: absolute;
-  top: 550px;
+  top: 545px;
   left: 0;
   display: block;
   width: 100%;
