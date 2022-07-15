@@ -3,6 +3,10 @@
 
 <head>
   <meta charset="UTF-8">
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="images/favicon.ico" />
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>bax</title>
@@ -17,7 +21,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
     rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@100;200;300;400;500;600;700;900&display=swap"
     rel="stylesheet">
 
   <!-- jquery -->
@@ -172,11 +176,13 @@
               </div>
 
             </div>
+
+            <div class="sw-visual-control">
+              <div class="swiper-pagination visual-pg"></div>
+            </div>
+
           </div>
 
-          <div class="sw-visual-pgbox">
-
-          </div>
 
         </div>
       </section>
@@ -199,11 +205,13 @@
                 <div class="swiper-slide">
                   <div class="b-art-pobox">
                     <div class="pobox-1">
-                      <div class="b-art-hovertag">
-                        <div class="add-bt">ADD TO CART</div>
-                        <div class="under-bt">
-                          <a href="#" class="icon-eye"></a>
-                          <a href="#" class="icon-heart"></a>
+                      <div class="bahybox">
+                        <div class="b-art-hovertag">
+                          <div class="add-bt">ADD TO CART</div>
+                          <div class="under-bt">
+                            <a href="#" class="icon-eye"></a>
+                            <a href="#" class="icon-heart"></a>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -278,12 +286,12 @@
             <p>백상 큐레이터가 선정한 추천 작품을 만나보세요.</p>
             <h2>MD PICK</h2>
             <div class="art-select">
-              <a href="#">그림작품</a>
-              <span>ㅣ</span>
-              <a href="#">사진작품</a>
+              <a href="#" onclick="return false;">그림작품<span>ㅣ</span></a>
+              <a href="#" onclick="return false;">사진작품</a>
             </div>
           </div>
-          <div class="md-mainbox">
+
+          <div class="md-mainbox md-box-1">
             <div class="md-main-img"></div>
             <div class="md-main-text">
               <span>구스타프 클림트</span>
@@ -296,8 +304,24 @@
               </p>
               <a href="#">-read more</a>
             </div>
-
           </div>
+
+          <div class="md-mainbox md-box-2">
+            <div class="md-main-img"></div>
+            <div class="md-main-text">
+              <span>빈센트 반 고흐</span>
+              <p>
+                <b>수확하는 사람</b>
+                <span>
+                  빈센트 반 고흐는 장 프랑수아 밀레(Jean Francois Millet)의 씨 뿌리는 사람(1850) 및 이삭 줍는 여인들-이삭줍기(1857)와 같은
+                  작품들에서 영감을 받아 농촌에서 행해지는 일들에 관심이 많았고, 그와 관련한 다수의 연작들을 그렸다. 들에서 수확을 하고 있는 농부의 모습과 더불어 수확기의 황금빛 밀밭의 색채가 내는
+                  효과가 보는 이의 시선을 사로잡는다. </span>
+              </p>
+              <a href="#">-read more</a>
+            </div>
+          </div>
+
+        </div>
       </section>
       <!-- //md pick -->
 
@@ -504,33 +528,33 @@
         </div>
       </section>
       <!-- //review -->
+
+
+      <!-- footer -->
+      <section class="footer">
+        <div class="inner">
+          <ul class="clearfix">
+            <li><a href="#">개인정보처리방침</a></li>
+            <li><a href="#">이용약관</a></li>
+            <li><a href="#">회사소개</a></li>
+          </ul>
+          <p>
+            <span>대표자 : 권순상</span><span>사업자 등록번호 : 137-81-30071</span>
+          </p>
+          <p>
+            <span>주소 : 경기도 고양시 일산동구 산황로 178-15</span>
+            <span>EMAIL : gbaexang@gmail.com</span>
+            <span>TEL : 031-954-9541</span>
+            <span>FAX : 031-977-9540</span>
+          </p>
+          <p class="copyright">Copyright © 2022 Baexang Gallery. All rights reserved.</p>
+
+        </div>
+        <button class="gotop-icon"></button>
+      </section>
+      <!-- //footer -->
+
     </div>
-
-    <!-- footer -->
-    <section class="footer">
-      <div class="inner">
-        <ul class="clearfix">
-          <li><a href="#">개인정보처리방침</a></li>
-          <li><a href="#">이용약관</a></li>
-          <li><a href="#">회사소개</a></li>
-        </ul>
-        <p>
-          <span>대표자 : 권순상</span><span>사업자 등록번호 : 137-81-30071</span>
-        </p>
-        <p>
-          <span>주소 : 경기도 고양시 일산동구 산황로 178-15</span>
-          <span>EMAIL : gbaexang@gmail.com</span>
-          <span>TEL : 031-954-9541</span>
-          <span>FAX : 031-977-9540</span>
-        </p>
-        <p class="copyright">Copyright © 2022 Baexang Gallery. All rights reserved.</p>
-
-      </div>
-      <button class="gotop-icon"></button>
-    </section>
-    <!-- //footer -->
-
-  </div>
 
 </body>
 

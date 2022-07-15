@@ -27,14 +27,29 @@ window.onload = function () {
 
 
   // 비주얼 슬라이드
+  let visualArr = ["1", "01", "02", "03"];
+  let visualArr2 = [
+    "1",
+    "BAEXANG GALLERY SHOP GRAND OPEN",
+    "GRAND OPEN",
+    "BAEXANG"
+  ]
+
+
   let sw_visual = new Swiper('.sw-visual', {
     loop: true,
-    speed: 1000,
-    effect: "fade",
+    speed: 2000,
     autoplay: {
-      delay: 1000,
+      delay: 2000,
       disableOnInteraction: false,
-    }
+    },
+    pagination: {
+      el: '.visual-pg',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<div class="' + className + '">' + "<p>" + visualArr[index + 1] + "</p>" + "<strong>" + visualArr2[index + 1] + "</strong>" + '</div>';
+      },
+    },
   });
 
 
@@ -56,6 +71,40 @@ window.onload = function () {
   });
 
 
+  // 베스트아트 호버태그
+  let pobox1 = $('.pobox-1');
+  let bahyBox = $('.bahybox');
+
+  pobox1.mouseenter(function () {
+    bahyBox.css('width', 267);
+    bahyBox.css('opacity', 1);
+
+  });
+
+  pobox1.mouseleave(function () {
+    bahyBox.css('width', 0);
+    bahyBox.css('opacity', 0);
+  });
+
+
+  // md pick 탭 메뉴
+  let mdSelect_A = $('.art-select > a');
+  let mdMainBox = $('.md-mainbox');
+
+  mdMainBox.eq(0).show();
+  mdSelect_A.eq(0).addClass('art-select-a-focus');
+
+  $.each(mdSelect_A, function(index){
+
+    $(this).click(function(){
+      mdMainBox.hide();
+      mdMainBox.eq(index).show();
+      // 포커스 효과 표현
+      mdSelect_A.removeClass('art-select-a-focus');
+      $(this).addClass('art-select-a-focus');
+    });
+
+  });
 
 
 
