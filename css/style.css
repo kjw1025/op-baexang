@@ -65,6 +65,33 @@ body {
 }
 
 
+.bt-type-1 {
+  position: relative;
+  display: block;
+  border: 1px solid #c9ab81;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+
+.bt-type-2 {
+  position: relative;
+  display: block;
+  height: 20px;
+  padding-left: 45px;
+}
+
+.bt-type-2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 35px;
+  height: 1px;
+  background-color: #c9ab81;
+}
+
+
 
 /* === 개별요소 === */
 
@@ -519,6 +546,7 @@ body {
   transform: scale(1);
   opacity: 1;
 }
+
 .visual-pg .swiper-pagination-bullet-active p {
   color: #c9ab81;
 }
@@ -749,7 +777,7 @@ body {
 }
 
 
-.add-bt {
+.b-art-hovertag>.bt-type-1 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -762,6 +790,7 @@ body {
   font-weight: 500;
   text-align: center;
   line-height: 45px;
+  color: #333;
   cursor: pointer;
 }
 
@@ -925,9 +954,11 @@ body {
   background: url('../images/md\ pick\ img.1.jpg') no-repeat center;
   background-size: 100%;
 }
+
 .md-box-2 .md-main-img {
   background: url('../images/md\ pick\ img.2.jpg') no-repeat center;
 }
+
 .md-main-text {
   position: relative;
   display: flex;
@@ -977,10 +1008,14 @@ body {
   -webkit-box-orient: vertical;
 }
 
-.md-main-text a {
+.md-main-text .bt-type-1 {
   position: relative;
   display: block;
+  width: 180px;
   height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  margin-top: 55px;
 }
 
 /* //md pick */
@@ -1142,6 +1177,9 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
+.newart-textbox .bt-type-2 {
+  margin-top: 25px;
+}
 
 /* 뉴 아트 nav */
 .sw-n_art-prev {
@@ -1217,7 +1255,11 @@ body {
 
 .gallbox a {
   position: relative;
-  display: block;
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
   margin-top: 60px;
 }
 
@@ -1353,16 +1395,30 @@ body {
 .re-text-sml {
   position: relative;
   display: block;
-  background-color: rgb(185, 185, 230);
   margin-top: 30px;
 }
 
-.re-text-sml h5 span {
+.re-text-sml h5 {
   position: relative;
   display: inline-block;
   font-family: "Noto Sans KR";
   font-size: 15px;
   color: #c9ab81;
+  font-weight: 400;
+}
+.re-text-sml h5 span {
+  position: relative;
+  margin: 0 15px;
+}
+.re-text-sml h5 span::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1px;
+  height: 10px;
+  background-color: #c9ab81;
 }
 
 .rtsml-t {
