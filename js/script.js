@@ -1,6 +1,6 @@
 window.onload = function () {
 
-
+  AOS.init();
 
   // 메뉴 오픈 기능
   $('.l-t-icon').click(function (e) {
@@ -38,9 +38,9 @@ window.onload = function () {
 
   let sw_visual = new Swiper('.sw-visual', {
     loop: true,
-    speed: 2000,
+    speed: 700,
     autoplay: {
-      delay: 2000,
+      delay: 3000,
       disableOnInteraction: false,
     },
     pagination: {
@@ -71,22 +71,6 @@ window.onload = function () {
   });
 
 
-  // 베스트아트 호버태그
-  let pobox1 = $('.pobox-1');
-  let bahyBox = $('.bahybox');
-
-  pobox1.mouseenter(function () {
-    bahyBox.css('width', 267);
-    bahyBox.css('opacity', 1);
-
-  });
-
-  pobox1.mouseleave(function () {
-    bahyBox.css('width', 0);
-    bahyBox.css('opacity', 0);
-  });
-
-
   // md pick 탭 메뉴
   let mdSelect_A = $('.art-select > a');
   let mdMainBox = $('.md-mainbox');
@@ -94,9 +78,9 @@ window.onload = function () {
   mdMainBox.eq(0).show();
   mdSelect_A.eq(0).addClass('art-select-a-focus');
 
-  $.each(mdSelect_A, function(index){
+  $.each(mdSelect_A, function (index) {
 
-    $(this).click(function(){
+    $(this).click(function () {
       mdMainBox.hide();
       mdMainBox.eq(index).show();
       // 포커스 효과 표현
@@ -105,6 +89,19 @@ window.onload = function () {
     });
 
   });
+
+  // md pick 슬라이드
+  let sw_mdPick = new Swiper('.sw-mdpick', {
+    observer: true,
+    observeParents: true,
+
+    // nav
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
 
 
 
@@ -151,6 +148,7 @@ window.onload = function () {
     }, 1000);
 
   });
+
 
 
 
