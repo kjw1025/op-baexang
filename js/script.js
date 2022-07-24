@@ -17,12 +17,20 @@ window.onload = function () {
   });
 
 
+  // all-search 
+  let allSearch = $('.all-search-wrap');
+  let r_t_icon = $('.r-t-icon');
+  let allSearchClose = $('.all-search-close-bt');
 
 
-
-
-
-
+  r_t_icon.click(function (e) {
+    e.preventDefault();
+    allSearch.addClass('all-search-wrap-open');
+  });
+  allSearchClose.click(function (e) {
+    e.preventDefault();
+    allSearch.removeClass('all-search-wrap-open');
+  });
 
 
 
@@ -147,6 +155,31 @@ window.onload = function () {
       scrollTop: 0
     }, 1000);
 
+  });
+
+  //gotop 보이기
+
+  // 현재위치 함수
+  let nowY = $(window).scrollTop();
+  console.log(nowY);
+
+  let bestArt = $('.best-art');
+  let bestArtY = bestArt.offset().top
+  console.log(bestArtY);
+
+
+  bestArt.on('mousewheel', function (e) {
+    let wheel = e.originalEvent.wheelDelta;
+    console.log(wheel);
+
+    if (wheel > 0) {
+
+      gotop_icon.removeClass('gotop-icon-open');
+
+    } else {
+
+      gotop_icon.addClass('gotop-icon-open');
+    }
   });
 
 
