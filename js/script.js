@@ -167,20 +167,31 @@ window.onload = function () {
   let bestArtY = bestArt.offset().top
   console.log(bestArtY);
 
+  if (nowY >= bestArtY) {
+    gotop_icon.addClass('gotop-icon-open');
+  } else {
+    gotop_icon.removeClass('gotop-icon-open');
+  }
 
-  bestArt.on('mousewheel', function (e) {
-    let wheel = e.originalEvent.wheelDelta;
-    console.log(wheel);
+  
+  // bestArt.on('mousewheel', function (e) {
+  //   let wheel = e.originalEvent.wheelDelta;
+  //   console.log(wheel);
 
-    if (wheel > 0) {
+  //   if (wheel > 0) {
 
-      gotop_icon.removeClass('gotop-icon-open');
+  //     gotop_icon.removeClass('gotop-icon-open');
 
-    } else {
+  //   } else {
 
-      gotop_icon.addClass('gotop-icon-open');
-    }
-  });
+  //     gotop_icon.addClass('gotop-icon-open');
+  //   }
+  // });
+
+
+
+
+
 
 
 

@@ -38,6 +38,7 @@ body {
 .wrap {
   position: relative;
   display: block;
+  padding-top: 100px;
 }
 
 .inner {
