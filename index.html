@@ -13,7 +13,7 @@
 
 
 
-
+  <!-- font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
@@ -25,8 +25,10 @@
     rel="stylesheet">
 
   <!-- jquery -->
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-    crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script> -->
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
   <!-- swiper -->
   <link rel="stylesheet" href="js/swiper/swiper.min.css">
@@ -36,6 +38,12 @@
   <link href="js/aos/aos.css" rel="stylesheet">
   <script src="js/aos/aos.js"></script>
 
+  <!-- Waypoint -->
+  <script src="js/jquery.waypoints.js"></script>
+
+  <!-- css animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- <link rel="stylesheet" href="css/animations.css"> -->
 
   <!-- 사용자 설정 -->
   <!-- css -->
@@ -265,7 +273,12 @@
                   <div class="pobox pobox-1">
                     <div class="bahybox">
                       <div class="b-art-hovertag">
-                        <div class="bt-type-1">ADD TO CART</div>
+                        <div herf="#" class="btnset btn-type01">
+                          <svg height="45" width="160">
+                            <rect height="45" width="160"></rect>
+                          </svg>
+                          <span>ADD TO CART</span>
+                        </div>
                         <div class="under-bt">
                           <a href="#" class="icon-eye"></a>
                           <a href="#" class="icon-heart"></a>
@@ -285,7 +298,12 @@
                   <div class="pobox pobox-2">
                     <div class="bahybox">
                       <div class="b-art-hovertag">
-                        <div class="bt-type-1">ADD TO CART</div>
+                        <div herf="#" class="btnset btn-type01">
+                          <svg height="45" width="160">
+                            <rect height="45" width="160"></rect>
+                          </svg>
+                          <span>ADD TO CART</span>
+                        </div>
                         <div class="under-bt">
                           <a href="#" class="icon-eye"></a>
                           <a href="#" class="icon-heart"></a>
@@ -305,7 +323,12 @@
                   <div class="pobox pobox-3">
                     <div class="bahybox">
                       <div class="b-art-hovertag">
-                        <div class="bt-type-1">ADD TO CART</div>
+                        <div herf="#" class="btnset btn-type01">
+                          <svg height="45" width="160">
+                            <rect height="45" width="160"></rect>
+                          </svg>
+                          <span>ADD TO CART</span>
+                        </div>
                         <div class="under-bt">
                           <a href="#" class="icon-eye"></a>
                           <a href="#" class="icon-heart"></a>
@@ -325,7 +348,12 @@
                   <div class="pobox pobox-4">
                     <div class="bahybox">
                       <div class="b-art-hovertag">
-                        <div class="bt-type-1">ADD TO CART</div>
+                        <div herf="#" class="btnset btn-type01">
+                          <svg height="45" width="160">
+                            <rect height="45" width="160"></rect>
+                          </svg>
+                          <span>ADD TO CART</span>
+                        </div>
                         <div class="under-bt">
                           <a href="#" class="icon-eye"></a>
                           <a href="#" class="icon-heart"></a>
@@ -345,7 +373,12 @@
                   <div class="pobox pobox-5">
                     <div class="bahybox">
                       <div class="b-art-hovertag">
-                        <div class="bt-type-1">ADD TO CART</div>
+                        <div herf="#" class="btnset btn-type01">
+                          <svg height="45" width="160">
+                            <rect height="45" width="160"></rect>
+                          </svg>
+                          <span>ADD TO CART</span>
+                        </div>
                         <div class="under-bt">
                           <a href="#" class="icon-eye"></a>
                           <a href="#" class="icon-heart"></a>
@@ -392,7 +425,7 @@
 
         <div class="md-mainbox md-box-1">
 
-          <div class="swiper-container sw-mdpick">
+          <div class="swiper-container sw-mdpick sw-mdpick-1">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="md-main-img"></div>
@@ -401,8 +434,8 @@
           </div>
 
           <!-- nav -->
-          <div class="swiper-button-prev sw-mdpick-prev-1"></div>
-          <div class="swiper-button-next sw-mdpick-next-1"></div>
+          <div class="swiper-button-prev sw-mdpick-prev sw-mdpick-prev-1"></div>
+          <div class="swiper-button-next sw-mdpick-next sw-mdpick-next-1"></div>
           <!-- //nav -->
 
           <div class="md-main-text">
@@ -414,13 +447,18 @@
                 분리파’를 결성했다. 관능적인 여성 이미지와 찬란한 황금빛, 화려한 색채를 특징으로 하고 성(性)과 사랑, 죽음에 대한 알레고리로 많은 사람들을 매혹시켰다.
               </span>
             </p>
-            <a href="#" class="bt-type-1">Read More</a>
+            <a href="#" class="btnset btn-type01">
+              <svg height="50" width="180">
+                <rect height="50" width="180"></rect>
+              </svg>
+              <span>Read More</span>
+            </a>
           </div>
         </div>
 
         <div class="md-mainbox md-box-2">
 
-          <div class="swiper-container sw-mdpick">
+          <div class="swiper-container sw-mdpick sw-mdpick-2">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <div class="md-main-img mmimg2"></div>
@@ -430,10 +468,10 @@
               </div>
             </div>
           </div>
-
+          
           <!-- nav -->
-          <div class="swiper-button-prev sw-mdpick-prev-1"></div>
-          <div class="swiper-button-next sw-mdpick-next-1"></div>
+          <div class="swiper-button-prev sw-mdpick-prev sw-mdpick-prev-2"></div>
+          <div class="swiper-button-next sw-mdpick-next sw-mdpick-next-2"></div>
           <!-- //nav -->
 
           <div class="md-main-text">
@@ -445,7 +483,12 @@
                 작품들에서 영감을 받아 농촌에서 행해지는 일들에 관심이 많았고, 그와 관련한 다수의 연작들을 그렸다. 들에서 수확을 하고 있는 농부의 모습과 더불어 수확기의 황금빛 밀밭의 색채가 내는
                 효과가 보는 이의 시선을 사로잡는다. </span>
             </p>
-            <a href="#" class="bt-type-1">Read More</a>
+            <a href="#" class="btnset btn-type01">
+              <svg height="50" width="180">
+                <rect height="50" width="180"></rect>
+              </svg>
+              <span>Read More</span>
+            </a>
           </div>
         </div>
 
@@ -575,7 +618,12 @@
             <span data-aos="flip-left" data-aos-duration="1200" data-aos-delay="1300">Y</span>
           </h2>
           <p>백상 갤러리에서 다양한 그림을 직접 감상하시고 구입하세요.</p>
-          <a href="#" class="bt-type-1">Read More</a>
+          <a href="#" class="btnset btn-type01">
+            <svg height="50" width="180">
+              <rect height="50" width="180"></rect>
+            </svg>
+            <span>Read More</span>
+          </a>
         </div>
       </div>
     </section>

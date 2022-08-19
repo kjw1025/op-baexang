@@ -1,3 +1,35 @@
+$(document).ready(function () {
+
+
+  // gotop
+  let gotop_icon = $('.gotop-icon');
+  gotop_icon.click(function () {
+    $('html').animate({
+      scrollTop: 0
+    }, 1000);
+  });
+
+  // gotop  일정위치에서 on/off 기능
+  let bestArt = $('.best-art');
+
+  new Waypoint({
+    element: bestArt,
+    handler: function (direction) {
+      if (direction == 'down') {
+        gotop_icon.addClass('gotop-icon-open');
+      } else if (direction == 'up') {
+        gotop_icon.removeClass('gotop-icon-open');
+      }
+    },
+    offset: '10%'
+  });
+
+
+});
+
+
+
+
 window.onload = function () {
 
   AOS.init();
@@ -32,9 +64,24 @@ window.onload = function () {
     allSearch.removeClass('all-search-wrap-open');
   });
 
+  // 스크롤에 따른 헤더 on/off 기능
+  let header = $('.header');
+
+  $(window).on('mousewheel', function (e) {
+    let wheel = e.originalEvent.wheelDelta;
+    console.log(wheel);
+
+    if (wheel < 0) {
+      header.addClass('header-close');
+    } else {
+      header.removeClass('header-close');
+    }
+  });
 
 
-  // 비주얼 슬라이드
+
+
+  // Visual 슬라이드
   let visualArr = ["1", "01", "02", "03"];
   let visualArr2 = [
     "1",
@@ -42,7 +89,6 @@ window.onload = function () {
     "GRAND OPEN",
     "BAEXANG"
   ]
-
 
   let sw_visual = new Swiper('.sw-visual', {
     loop: true,
@@ -56,6 +102,11 @@ window.onload = function () {
       clickable: true,
       renderBullet: function (index, className) {
         return '<div class="' + className + '">' + "<p>" + visualArr[index + 1] + "</p>" + "<strong>" + visualArr2[index + 1] + "</strong>" + '</div>';
+        
+        // `<div>
+        //   <p>${visualArr[index + 1]}</p>
+        //   <strong>${visualArr2[index + 1]}</strong>
+        // </div>`
       },
     },
   });
@@ -68,13 +119,13 @@ window.onload = function () {
 
     // nav
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".sw-b_art-next",
+      prevEl: ".sw-b_art-prev",
     },
 
     //pg
     pagination: {
-      el: ".swiper-pagination",
+      el: ".b-art-pg",
     },
   });
 
@@ -99,14 +150,24 @@ window.onload = function () {
   });
 
   // md pick 슬라이드
-  let sw_mdPick = new Swiper('.sw-mdpick', {
+  let sw_mdPick1 = new Swiper('.sw-mdpick-1', {
     observer: true,
     observeParents: true,
 
     // nav
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".sw-mdpick-next-1",
+      prevEl: ".sw-mdpick-prev-1",
+    },
+  });
+  let sw_mdPick2 = new Swiper('.sw-mdpick-2', {
+    observer: true,
+    observeParents: true,
+
+    // nav
+    navigation: {
+      nextEl: ".sw-mdpick-next-2",
+      prevEl: ".sw-mdpick-prev-2",
     },
   });
 
@@ -121,8 +182,8 @@ window.onload = function () {
 
     // nav
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".sw-n_art-next",
+      prevEl: ".sw-n_art-prev",
     },
 
   });
@@ -135,61 +196,44 @@ window.onload = function () {
 
     // nav
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".sw-r_art-next",
+      prevEl: ".sw-r_art-prev",
     },
 
     //pg
     pagination: {
-      el: ".swiper-pagination",
+      el: ".r-pg",
     },
 
   });
 
 
 
-  // gotop
-  let gotop_icon = $('.gotop-icon');
-  gotop_icon.click(function () {
-    $('html').animate({
-      scrollTop: 0
-    }, 1000);
-
-  });
+  
 
   //gotop 보이기
 
   // 현재위치 함수
-  let nowY = $(window).scrollTop();
-  console.log(nowY);
+  // $(window).scroll(() => {
+  //   let nowY = $(window).scrollTop(); // 현재 스크롤바 위치
+  //   console.log(nowY);
 
-  let bestArt = $('.best-art');
-  let bestArtY = bestArt.offset().top
-  console.log(bestArtY);
-
-  if (nowY >= bestArtY) {
-    gotop_icon.addClass('gotop-icon-open');
-  } else {
-    gotop_icon.removeClass('gotop-icon-open');
-  }
-
-  
-  // bestArt.on('mousewheel', function (e) {
-  //   let wheel = e.originalEvent.wheelDelta;
-  //   console.log(wheel);
-
-  //   if (wheel > 0) {
-
-  //     gotop_icon.removeClass('gotop-icon-open');
-
-  //   } else {
-
-  //     gotop_icon.addClass('gotop-icon-open');
-  //   }
+  //   // if (nowY >= bestArtY) {
+  //   //   gotop_icon.addClass('gotop-icon-open');
+  //   // } else {
+  //   //   gotop_icon.removeClass('gotop-icon-open');
+  //   // }
   // });
 
+  // let bestArt = $('.best-art');
+  // let bestArtY = bestArt.offset().top;
+  // console.log(bestArtY);
 
-
+  // if (nowY >= bestArtY) {
+  //   gotop_icon.addClass('gotop-icon-open');
+  // } else {
+  //   gotop_icon.removeClass('gotop-icon-open');
+  // }
 
 
 
