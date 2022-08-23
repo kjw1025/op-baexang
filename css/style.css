@@ -1276,6 +1276,7 @@ body {
 
 
 /* md pick */
+
 .md-pick {
   position: relative;
   display: block;
@@ -1369,6 +1370,7 @@ body {
   transform: scale(1);
 }
 
+
 /* md nav */
 .sw-mdpick-prev {
   background: url('../images/nav\ prev.png') no-repeat center;
@@ -1383,7 +1385,6 @@ body {
   top: 285px;
   right: -160px;
 }
-
 /* /// md nav */
 
 
@@ -1447,7 +1448,8 @@ body {
   width: 180px;
   font-size: 18px;
   line-height: 50px;
-}
+} 
+
 
 /* //md pick */
 
