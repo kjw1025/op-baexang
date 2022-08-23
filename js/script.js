@@ -102,13 +102,19 @@ window.onload = function () {
       clickable: true,
       renderBullet: function (index, className) {
         return '<div class="' + className + '">' + "<p>" + visualArr[index + 1] + "</p>" + "<strong>" + visualArr2[index + 1] + "</strong>" + '</div>';
-        
+
         // `<div>
         //   <p>${visualArr[index + 1]}</p>
         //   <strong>${visualArr2[index + 1]}</strong>
         // </div>`
       },
     },
+    navigation: {
+      nextEl: ".sw-visual .swiper-button-next",
+      prevEl: ".sw-visual .swiper-button-prev",
+    }
+
+
   });
 
 
@@ -209,7 +215,7 @@ window.onload = function () {
 
 
 
-  
+
 
   //gotop 보이기
 

@@ -179,6 +179,87 @@ body {
   transition-delay: 0s;
 }
 
+/* 타이틀 텍스트 */
+.title-txt {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.title-txt p {
+  position: relative;
+  display: block;
+  font-family: 'Noto Serif KR';
+  font-size: 20px;
+  letter-spacing: -1px;
+  color: #c9ab81;
+  margin-bottom: 12px;
+}
+.title-txt h2 {
+  position: relative;
+  display: inline-block;
+  font-size: 50px;
+  font-weight: 500;
+  letter-spacing: 5.5px;
+  color: #211e1f;
+  text-align: center;
+  padding: 0 80px;
+}
+
+/* .title-txt h2  사이드바*/
+.title-txt h2::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  width: 170px;
+  height: 1px;
+  background: #211e1f;
+  margin-top: -0.5px;
+}
+
+.title-txt h2::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  width: 170px;
+  height: 1px;
+  background: #211e1f;
+  margin-top: -0.5px;
+}
+
+/* bar animtion */
+.title-txt.aos-animate h2::before,
+.title-txt.aos-animate h2::after {
+  -webkit-animation:mainTitAni 1.2s forwards;
+  animation:mainTitAni 1.2s forwards;
+}
+
+@-webkit-keyframes mainTitAni {
+  from {
+      opacity:0;
+      visibility:hidden;
+      width:0;
+  }
+  to {
+      opacity:1;
+      visibility:visible;
+      width:170px;
+  }
+}
+@keyframes mainTitAni {
+  from {
+      opacity:0;
+      visibility:hidden;
+      width:0;
+  }
+  to {
+      opacity:1;
+      visibility:visible;
+      width:170px;
+  }
+}
 
 /* === 개별요소 === */
 
@@ -286,11 +367,11 @@ body {
   transition: all 0.3s;
 }
 
-/* sub메뉴 */
-.l-m-w-inner>ul>li>a:hover {
+.l-m-w-inner>ul>li:hover> a {
   font-style: italic;
   color: #c9ab81;
 }
+/* sub메뉴 */
 
 .l-m-w-inner>ul>li:hover .submenu {
   visibility: visible;
@@ -896,6 +977,62 @@ body {
   color: #c9ab81;
 }
 
+/* cursor */
+.sw-visual .swiper-button-prev {
+  opacity: 0 !important;
+  left: 0 !important;
+  top: 0 !important;
+  margin: 0 !important;
+  width: 30% !important;
+  height: 100% !important;
+  background: none !important;
+}
+.sw-visual .swiper-button-next {
+  opacity: 0 !important;
+  right: 0 !important;
+  top: 0 !important;
+  margin: 0 !important;
+  width: 30% !important;
+  height: 100% !important;
+  background: none !important;
+}
+/* ===== CURSOR ===== */
+.cursor-ball {
+  display:none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9000;
+  pointer-events: none;
+}  
+.cursor-ball .ball {
+  opacity: 0.5;
+  display:block;
+  width:30px;
+  height:30px;
+  border-radius:100%;
+  border:1px solid #fff;
+  -webkit-transform:scale(0);
+  transform:scale(0);
+}
+.cursor-ball .text {
+  position:absolute;
+  left:50%;
+  top:50%;
+  font-size:17px;
+  color:#fff;
+  font-weight:700;
+  line-height:18px;
+  -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);  
+  font-family:'EB Garamond', 'Noto Sans KR', 'Noto Serif KR', 'Malgun Gothic', dotum, sans-serif;  
+}
+.cursor-able {
+  cursor:pointer;
+}
+
 /* //main slider */
 
 
@@ -903,68 +1040,16 @@ body {
 .best-art {
   position: relative;
   display: block;
-}
-
-.b-art-text {
-  position: relative;
-  display: block;
-  height: 392px;
-  text-align: center;
-  background-color: #fff;
   padding-top: 180px;
 }
 
-.b-art-text p {
-  position: relative;
-  display: block;
-  font-family: 'Noto Serif KR';
-  font-size: 20px;
-  letter-spacing: -1px;
-  color: #c9ab81;
-  margin-bottom: 20px;
-}
-
-.b-art-text h2 {
-  position: relative;
-  display: inline-block;
-  font-size: 50px;
-  font-weight: 500;
-  letter-spacing: 5.5px;
-  color: #211e1f;
-  text-align: center;
-  padding: 0 80px;
-}
-
-/* .b-art-text h2  사이드바*/
-.b-art-text h2::before {
-  content: "";
-  position: absolute;
-  right: 100%;
-  top: 50%;
-  width: 170px;
-  height: 1px;
-  background: #211e1f;
-  margin-top: -0.5px;
-}
-
-.b-art-text h2::after {
-  content: "";
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  width: 170px;
-  height: 1px;
-  background: #211e1f;
-  margin-top: -0.5px;
-}
-
-/* ////.b-art-text h2  사이드바*/
 
 .b-art-slider-box {
   position: relative;
   display: block;
   width: 1400px;
   margin: 0 auto;
+  margin-top: 120px;
 }
 
 .b-art-pobox {
@@ -1203,63 +1288,13 @@ body {
   padding: 100px 0 210px;
 }
 
-.md-p-text {
-  position: relative;
-  display: block;
-  height: 240px;
-  text-align: center;
-}
-
-.md-p-text p {
-  position: relative;
-  display: block;
-  font-family: 'Noto Serif KR';
-  font-size: 20px;
-  color: #c9ab81;
-  letter-spacing: -1px;
-  margin-bottom: 20px;
-}
-
-.md-p-text h2 {
-  position: relative;
-  display: inline-block;
-  font-size: 50px;
-  font-weight: 500;
-  letter-spacing: 5.5px;
-  color: #211e1f;
-  padding: 0 80px;
-}
-
-/* .b-art-text h2  사이드바*/
-.md-p-text h2::before {
-  content: "";
-  position: absolute;
-  right: 100%;
-  top: 50%;
-  width: 170px;
-  height: 1px;
-  background: #211e1f;
-  margin-top: -0.5px;
-}
-
-.md-p-text h2::after {
-  content: "";
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  width: 170px;
-  height: 1px;
-  background: #211e1f;
-  margin-top: -0.5px;
-}
-
-/* ///.b-art-text h2  사이드바*/
 
 .art-select {
   position: relative;
   display: block;
   text-align: center;
   margin-top: 50px;
+  margin-bottom: 70px;
 }
 
 .art-select a {
@@ -1421,60 +1456,9 @@ body {
 .new-art {
   position: relative;
   display: block;
-}
-
-.new-a-text {
-  position: relative;
-  display: block;
-  height: 292px;
   padding-top: 100px;
-  text-align: center;
 }
 
-.new-a-text p {
-  position: relative;
-  display: block;
-  font-family: 'Noto Serif KR';
-  font-size: 20px;
-  letter-spacing: -1px;
-  margin-bottom: 20px;
-  color: #c9ab81;
-}
-
-.new-a-text h2 {
-  position: relative;
-  display: inline-block;
-  font-size: 50px;
-  font-weight: 500;
-  letter-spacing: 5.5px;
-  color: #211e1f;
-  padding: 0 80px;
-}
-
-/*.new-a-text h2  사이드바*/
-.new-a-text h2::before {
-  content: "";
-  position: absolute;
-  right: 100%;
-  top: 50%;
-  width: 170px;
-  height: 1px;
-  background: #211e1f;
-  margin-top: -0.5px;
-}
-
-.new-a-text h2::after {
-  content: "";
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  width: 170px;
-  height: 1px;
-  background: #211e1f;
-  margin-top: -0.5px;
-}
-
-/* ///.b-art-text h2  사이드바*/
 
 .n-art-slider-box {
   position: relative;
@@ -1482,6 +1466,7 @@ body {
   width: 1400px;
   height: 940px;
   margin: 0 auto;
+  margin-top: 100px;
 }
 
 .new-slide-box {
@@ -1670,65 +1655,12 @@ body {
   padding: 150px 0 160px;
 }
 
-.review-text {
-  position: relative;
-  display: block;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 90px;
-}
-
-.review-text p {
-  position: relative;
-  display: block;
-  font-family: 'Noto Serif KR';
-  font-size: 20px;
-  letter-spacing: -1px;
-  margin-bottom: 12px;
-  color: #c9ab81;
-}
-
-.review-text h2 {
-  position: relative;
-  display: inline-block;
-  font-size: 50px;
-  font-weight: 500;
-  letter-spacing: 5.5px;
-  padding: 0 80px;
-  color: #211e1f;
-}
-
-/*.review-text h2  사이드바*/
-.review-text h2::before {
-  content: "";
-  position: absolute;
-  right: 100%;
-  top: 50%;
-  width: 170px;
-  height: 1px;
-  background: #211e1f;
-  margin-top: -0.5px;
-}
-
-.review-text h2::after {
-  content: "";
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  width: 170px;
-  height: 1px;
-  background: #211e1f;
-  margin-top: -0.5px;
-}
-
-/* ///..review-text h2  사이드바*/
-
-
 .r-slider-box {
   position: relative;
   display: block;
   width: 1400px;
   margin: 0 auto;
+  margin-top: 90px;
 }
 
 .rev-pobox {
@@ -1840,7 +1772,7 @@ body {
 
 .re-text-sml a {
   position: relative;
-  display: block;
+  display: inline-block;
   font-size: 18px;
   margin-top: 30px;
 }
