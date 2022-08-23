@@ -1,0 +1,248 @@
+/* ===== MD PICK ===== */
+.pick {
+    padding: 100px 0 210px;
+    margin: 0 50px;
+    background: url(/img/main/pick-bg.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.pick .empty-content {
+    background-color: transparent !important;
+}
+
+.pick .pick-tab-wrap {
+    margin: 0 auto;
+    max-width: 1400px;
+    width: calc(100% - 100px);
+}
+
+.pick .pick-tab {
+    margin-top: 50px;
+}
+
+.pick .pick-tab ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pick .pick-tab ul li {
+    position: relative;
+    margin-left: 20px;
+    padding-left: 20px;
+}
+
+.pick .pick-tab ul li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 1px;
+    height: 12px;
+    background-color: #dddddd;
+}
+
+.pick .pick-tab ul li:first-child {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.pick .pick-tab ul li:first-child::after {
+    display: none;
+}
+
+.pick .pick-tab ul li a {
+    display: block;
+    font-size: 18px;
+    color: #666666;
+    line-height: 25px;
+}
+
+.pick .pick-tab ul li.on a {
+    color: #333;
+    font-weight: 500;
+}
+
+.pick .pick-tabcon-wrap {
+    margin: 75px auto 0;
+    max-width: 1500px;
+}
+
+.pick .pick-tabcon {
+    display: none;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1400px;
+}
+
+.pick .pick-tabcon.on {
+    display: block;
+}
+
+.pick .pick-thumb-wrap {
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    z-index: 10;
+    width: 640px;
+    height: 100%;
+    background-color: #f8f8f8;
+    -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pick .pick-thumb-slider {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pick .pick-thumb-slider .swiper-slide {
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+.pick .pick-img-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pick .pick-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-transition: all 5s ease;
+    transition: all 5s ease;
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+}
+
+.pick .pick-info-slider {
+    overflow: hidden;
+    margin-left: 60px;
+    background-color: #fff;
+    -webkit-box-shadow: 1px 3px 13px rgba(0, 0, 0, 0.13);
+    box-shadow: 1px 3px 13px rgba(0, 0, 0, 0.13);
+}
+
+.pick .pick-info-slider .swiper-slide {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pick .pick-desc-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 80px 30px 700px;
+    width: 100%;
+    min-height: 500px;
+}
+
+.pick .pick-artist {
+    opacity: 0;
+    visibility: hidden;
+    display: block;
+    padding-left: 2px;
+    margin-top: 30px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    color: #c9ab81;
+    letter-spacing: -0.7px;
+    font-family: 'Noto Serif KR', 'Noto Sans KR', 'EB Garamond', 'Malgun Gothic', dotum, sans-serif;
+    line-height: 26px;
+}
+
+.pick .pick-desc dt {
+    opacity: 0;
+    visibility: hidden;
+    margin-bottom: 30px;
+    font-size: 36px;
+    color: #333333;
+    font-family: 'Noto Serif KR', 'Noto Sans KR', 'EB Garamond', 'Malgun Gothic', dotum, sans-serif;
+    font-weight: 700;
+    line-height: 46px;
+    word-break: keep-all;
+}
+
+.pick .pick-desc dd {
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    padding-left: 2px;
+    max-height: 78px;
+    font-size: 16px;
+    color: #666666;
+    line-height: 26px;
+    word-break: keep-all;
+}
+
+.pick .pick-btnwrap {
+    opacity: 0;
+    visibility: hidden;
+    margin-top: 55px;
+}
+
+.pick .btn-type01 {
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 50px;
+}
+
+.pick .swiper-button-next {
+    margin-top: 18px;
+}
+
+.pick .swiper-button-prev {
+    margin-top: 18px;
+}
+
+.pick .swiper-slide-active .pick-img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.pick .swiper-slide-active .pick-artist,
+.pick .swiper-slide-active .pick-desc dt,
+.pick .swiper-slide-active .pick-desc dd,
+.pick .swiper-slide-active .pick-btnwrap {
+    -webkit-animation: fadeUp 1s forwards;
+    animation: fadeUp 1s forwards;
+}
+
+.pick .swiper-slide-active .pick-desc dt {
+    animation-delay: 0.05s;
+}
+
+.pick .swiper-slide-active .pick-desc dd {
+    animation-delay: 0.1s;
+}
+
+.pick .swiper-slide-active .pick-btnwrap {
+    animation-delay: 0.15s;
+}
+
+@media all and (-ms-high-contrast:none) {
+
+    *::-ms-backdrop,
+    .pick-thumb-wrap * {
+        opacity: 0.99;
+    }
+}

@@ -45,20 +45,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <!-- <link rel="stylesheet" href="css/animations.css"> -->
 
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"
+    integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
   <!-- 사용자 설정 -->
   <!-- css -->
   <link rel="stylesheet" href="css/style.css">
-  
+
 
   <!-- <link rel="stylesheet" href="fonts/fonts.css"> -->
 
   <!-- js -->
   <script src="js/script.js"></script>
-  <script src="js/cursor.js"></script>
+  
+  <!-- copy -->
+  <!-- <link rel="stylesheet" href="copycd/copycode.css">
+  <script src="copycd/copycode.js"></script> -->
+
 
 </head>
 
 <body>
+
+  <div class="cursor-ball">
+    <div class="ball"></div>
+  </div>
+
   <div class="wrap">
 
 
@@ -246,7 +260,7 @@
           </div>
 
           <div class="sw-visual-control">
-            <div class="swiper-pagination visual-pg"></div>94
+            <div class="swiper-pagination visual-pg"></div>
           </div>
 
           <!-- nav -->
@@ -420,10 +434,12 @@
     <!-- md pick -->
     <section class="md-pick">
       <div class="inner">
+
         <div class="title-txt aos-animate" data-aos="fade-up" data-aos-duration="1200">
           <p>백상 큐레이터가 선정한 추천 작품을 만나보세요.</p>
           <h2>MD PICK</h2>
         </div>
+
         <div class="art-select" data-aos="fade-up" data-aos-duration="1200">
           <a href="#" onclick="return false;">그림작품</a>
           <span>ㅣ</span>
