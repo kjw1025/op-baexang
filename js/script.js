@@ -140,15 +140,41 @@ window.onload = function () {
   // md pick 탭 메뉴
   let mdSelect_A = $('.art-select > a');
   let mdMainBox = $('.md-mainbox');
+  let swMdPick = $('.sw-mdpick');
 
+  // 슬라이드 변수
+  let sw_mdPick1;
+  let sw_mdPick1_Desc;
+
+  let sw_mdPick2;
+  let sw_mdPick2_Desc;
+
+  swMdPick.eq(0).show();
   mdMainBox.eq(0).show();
   mdSelect_A.eq(0).addClass('art-select-a-focus');
 
   $.each(mdSelect_A, function (index) {
 
     $(this).click(function () {
+      swMdPick.hide();
       mdMainBox.hide();
+      swMdPick.eq(index).show();
       mdMainBox.eq(index).show();
+
+      // if (index == 0) {
+
+      //   // sw_mdPick2.destroy();
+      //   // sw_mdPick2_Desc.destroy();
+      //   swmdPic1FN();
+
+      // } else {
+
+      //   // sw_mdPick1.destroy();
+      //   // sw_mdPick1_Desc.destroy();
+      //   swmdPic2FN();
+
+      // }
+
       // 포커스 효과 표현
       mdSelect_A.removeClass('art-select-a-focus');
       $(this).addClass('art-select-a-focus');
@@ -157,26 +183,107 @@ window.onload = function () {
   });
 
   // md pick 슬라이드
-  let sw_mdPick1 = new Swiper('.sw-mdpick-1', {
-    observer: true,
-    observeParents: true,
+  swmdPic1FN();
 
-    // nav
-    navigation: {
-      nextEl: ".sw-mdpick-next-1",
-      prevEl: ".sw-mdpick-prev-1",
-    },
-  });
-  let sw_mdPick2 = new Swiper('.sw-mdpick-2', {
-    observer: true,
-    observeParents: true,
+  function swmdPic1FN() {
+    sw_mdPick1 = new Swiper('.sw-mdpick-1', {
+      loop: false,
+      speed: 1000,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      observer: true,
+      observeParents: true,
 
-    // nav
-    navigation: {
-      nextEl: ".sw-mdpick-next-2",
-      prevEl: ".sw-mdpick-prev-2",
-    },
-  });
+
+      on: {
+        progress: function () {
+          for (var i = 0; i < this.slides.length; i++) {
+            var slideProgress = this.slides[i].progress;
+            var innerOffset = this.width * 0.5;
+            var innerTranslate = slideProgress * innerOffset;
+            this.slides[i].querySelector('.md-main-img').style.transform = 'translate3d(' + innerTranslate + 'px, 0, 0)';
+          }
+        },
+        touchStart: function () {
+          for (var i = 0; i < this.slides.length; i++) {
+            this.slides[i].style.transition = '';
+          }
+        },
+        setTransition: function (speed) {
+          for (var i = 0; i < this.slides.length; i++) {
+            this.slides[i].style.transition = speed + 'ms';
+            this.slides[i].querySelector('.md-main-img').style.transition = speed + 'ms';
+          }
+        }
+      }
+
+      // nav
+      // navigation: {
+      //   nextEl: ".sw-mdpick-next-1",
+      //   prevEl: ".sw-mdpick-prev-1",
+      // },
+    });
+
+    sw_mdPick1_Desc = new Swiper('.md-box-1', {
+      loop: false,
+      observer: true,
+      observeParents: true
+    });
+
+    // sw_mdPick1.controller.control = sw_mdPick1_Desc;
+    // sw_mdPick1_Desc.controller.control = sw_mdPick1;
+  }
+
+  swmdPic2FN();
+
+  function swmdPic2FN() {
+    sw_mdPick2 = new Swiper('.sw-mdpick-2', {
+      loop: false,
+      speed: 1000,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      observer: true,
+      observeParents: true,
+
+
+      on: {
+        progress: function () {
+          for (var i = 0; i < this.slides.length; i++) {
+            var slideProgress = this.slides[i].progress;
+            var innerOffset = this.width * 0.5;
+            var innerTranslate = slideProgress * innerOffset;
+            this.slides[i].querySelector('.md-main-img').style.transform = 'translate3d(' + innerTranslate + 'px, 0, 0)';
+          }
+        },
+        touchStart: function () {
+          for (var i = 0; i < this.slides.length; i++) {
+            this.slides[i].style.transition = '';
+          }
+        },
+        setTransition: function (speed) {
+          for (var i = 0; i < this.slides.length; i++) {
+            this.slides[i].style.transition = speed + 'ms';
+            this.slides[i].querySelector('.md-main-img').style.transition = speed + 'ms';
+          }
+        }
+      }
+
+      // nav
+      // navigation: {
+      //   nextEl: ".sw-mdpick-next-2",
+      //   prevEl: ".sw-mdpick-prev-2",
+      // },
+    });
+
+    sw_mdPick2_Desc = new Swiper('md-box-2', {
+      loop: false,
+      observer: true,
+      observeParents: true
+    });
+
+    // sw_mdPick2.controller.control = sw_mdPick2_Desc;
+    // sw_mdPick2_Desc.controller.control = sw_mdPick2;
+  }
 
 
 
