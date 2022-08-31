@@ -139,8 +139,9 @@ window.onload = function () {
 
   // md pick 탭 메뉴
   let mdSelect_A = $('.art-select > a');
-  let mdMainBox = $('.md-mainbox');
-  let swMdPick = $('.sw-mdpick');
+
+  let paintingWrap = $('.painting-wrap');
+  let photoWrap = $('.photo-wrap');
 
   // 슬라이드 변수
   let sw_mdPick1;
@@ -149,43 +150,56 @@ window.onload = function () {
   let sw_mdPick2;
   let sw_mdPick2_Desc;
 
-  swMdPick.eq(0).show();
-  mdMainBox.eq(0).show();
+  paintingWrap.show();
+  photoWrap.hide();
+
   mdSelect_A.eq(0).addClass('art-select-a-focus');
 
   $.each(mdSelect_A, function (index) {
 
     $(this).click(function () {
-      swMdPick.hide();
-      mdMainBox.hide();
-      swMdPick.eq(index).show();
-      mdMainBox.eq(index).show();
 
-      // if (index == 0) {
+      paintingWrap.hide();
+      photoWrap.hide();
 
-      //   // sw_mdPick2.destroy();
-      //   // sw_mdPick2_Desc.destroy();
-      //   swmdPic1FN();
+      sw_mdPick1.slideTo(0);
+      sw_mdPick2.slideTo(0);
 
-      // } else {
-
-      //   // sw_mdPick1.destroy();
-      //   // sw_mdPick1_Desc.destroy();
-      //   swmdPic2FN();
-
-      // }
+      if (index == 0) {
+        paintingWrap.show();
+      }else{
+        photoWrap.show();
+      }
 
       // 포커스 효과 표현
       mdSelect_A.removeClass('art-select-a-focus');
       $(this).addClass('art-select-a-focus');
+
     });
 
   });
 
-  // md pick 슬라이드
-  swmdPic1FN();
 
-  function swmdPic1FN() {
+  let descOption = {
+    loop: false,
+    speed: 1000,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    slidesPerView: 1,
+    spaceBetween: 0,
+    observer: true,
+    observeParents: true,
+    allowTouchMove:false
+  }
+
+  // md pick 슬라이드
+  swMDMake();
+
+  function swMDMake() {
+
+    // 그림작품 슬라이드
     sw_mdPick1 = new Swiper('.sw-mdpick-1', {
       loop: false,
       speed: 1000,
@@ -193,8 +207,7 @@ window.onload = function () {
       spaceBetween: 0,
       observer: true,
       observeParents: true,
-
-
+  
       on: {
         progress: function () {
           for (var i = 0; i < this.slides.length; i++) {
@@ -215,28 +228,20 @@ window.onload = function () {
             this.slides[i].querySelector('.md-main-img').style.transition = speed + 'ms';
           }
         }
+      },
+  
+      // nav
+      navigation: {
+        nextEl: ".sw-mdpick-next-1",
+        prevEl: ".sw-mdpick-prev-1",
       }
 
-      // nav
-      // navigation: {
-      //   nextEl: ".sw-mdpick-next-1",
-      //   prevEl: ".sw-mdpick-prev-1",
-      // },
     });
+    sw_mdPick1_Desc = new Swiper('.md-box-1', descOption);
+    sw_mdPick1.controller.control = sw_mdPick1_Desc;
+    sw_mdPick1_Desc.controller.control = sw_mdPick1;
 
-    sw_mdPick1_Desc = new Swiper('.md-box-1', {
-      loop: false,
-      observer: true,
-      observeParents: true
-    });
-
-    // sw_mdPick1.controller.control = sw_mdPick1_Desc;
-    // sw_mdPick1_Desc.controller.control = sw_mdPick1;
-  }
-
-  swmdPic2FN();
-
-  function swmdPic2FN() {
+    // 사진작품 슬라이드
     sw_mdPick2 = new Swiper('.sw-mdpick-2', {
       loop: false,
       speed: 1000,
@@ -244,8 +249,7 @@ window.onload = function () {
       spaceBetween: 0,
       observer: true,
       observeParents: true,
-
-
+  
       on: {
         progress: function () {
           for (var i = 0; i < this.slides.length; i++) {
@@ -266,26 +270,20 @@ window.onload = function () {
             this.slides[i].querySelector('.md-main-img').style.transition = speed + 'ms';
           }
         }
+      },
+  
+      // nav
+      navigation: {
+        nextEl: ".sw-mdpick-next-2",
+        prevEl: ".sw-mdpick-prev-2",
       }
 
-      // nav
-      // navigation: {
-      //   nextEl: ".sw-mdpick-next-2",
-      //   prevEl: ".sw-mdpick-prev-2",
-      // },
     });
+    sw_mdPick2_Desc = new Swiper('.md-box-2', descOption);
+    sw_mdPick2.controller.control = sw_mdPick2_Desc;
+    sw_mdPick2_Desc.controller.control = sw_mdPick2;
 
-    sw_mdPick2_Desc = new Swiper('md-box-2', {
-      loop: false,
-      observer: true,
-      observeParents: true
-    });
-
-    // sw_mdPick2.controller.control = sw_mdPick2_Desc;
-    // sw_mdPick2_Desc.controller.control = sw_mdPick2;
   }
-
-
 
 
   // 뉴 아트 슬라이드
