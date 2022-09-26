@@ -28,7 +28,7 @@ html {
 }
 
 body {
-  font-family: 'EB Garamond', 'Noto Sans KR', 'Noto Serif KR', sans-serif;
+  font-family: "EB Garamond", "Noto Sans KR", "Noto Serif KR", sans-serif;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.4px;
@@ -48,13 +48,19 @@ body {
   margin: 0 auto;
 }
 
-.clearfix::after {
-  content: '';
+section {
+  position: relative;
+  display: block;
+  width: 100vw;
+}
+
+/* .clearfix::after {
+  content: "";
   position: relative;
   display: block;
   width: 100%;
   clear: both;
-}
+} */
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
@@ -189,7 +195,7 @@ body {
 .title-txt p {
   position: relative;
   display: block;
-  font-family: 'Noto Serif KR';
+  font-family: "Noto Serif KR";
   font-size: 20px;
   letter-spacing: -1px;
   color: #c9ab81;
@@ -274,7 +280,7 @@ body {
   display: inline-block;
   width: 23px;
   height: 13px;
-  background: url('../images/icon/ico-header-menu.png') no-repeat center;
+  background: url("../images/icon/ico-header-menu.png") no-repeat center;
 }
 
 /* 왼쪽 상단 메뉴 */
@@ -330,7 +336,7 @@ body {
   display: block;
   width: 146px;
   height: 45px;
-  background: url('../images/icon/logo.png') no-repeat center;
+  background: url("../images/icon/logo.png") no-repeat center;
   background-size: cover;
 }
 
@@ -341,25 +347,25 @@ body {
   display: block;
   width: 18px;
   height: 18px;
-  background: url('../images/icon/ico-sitemap-close.png') no-repeat center;
+  background: url("../images/icon/ico-sitemap-close.png") no-repeat center;
   background-size: cover;
 }
 
-.l-m-w-inner>ul {
+.l-m-w-inner > ul {
   margin-top: 100px;
   padding-bottom: 50px;
   height: 100%;
   overflow-y: auto;
 }
 
-.l-m-w-inner>ul>li {
+.l-m-w-inner > ul > li {
   position: relative;
   display: block;
   height: 80px;
   padding-right: 300px;
 }
 
-.l-m-w-inner>ul>li>a {
+.l-m-w-inner > ul > li > a {
   position: relative;
   display: block;
   padding: 22px 0;
@@ -371,14 +377,14 @@ body {
   transition: all 0.3s;
 }
 
-.l-m-w-inner>ul>li:hover>a {
+.l-m-w-inner > ul > li:hover > a {
   font-style: italic;
   color: #c9ab81;
 }
 
 /* sub메뉴 */
 
-.l-m-w-inner>ul>li:hover .submenu {
+.l-m-w-inner > ul > li:hover .submenu {
   visibility: visible;
 }
 
@@ -398,7 +404,7 @@ body {
   margin-top: 22px;
 }
 
-.submenu>li>a {
+.submenu > li > a {
   position: relative;
   font-size: 16px;
   font-weight: 500;
@@ -407,8 +413,8 @@ body {
   color: #333333;
 }
 
-.submenu>li>a::after {
-  content: '';
+.submenu > li > a::after {
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -420,11 +426,11 @@ body {
   transition: all 0.3s;
 }
 
-.submenu>li>a:hover {
+.submenu > li > a:hover {
   color: #c9ab81;
 }
 
-.submenu>li>a:hover:after {
+.submenu > li > a:hover:after {
   width: 100%;
 }
 
@@ -491,7 +497,7 @@ body {
   top: 0;
   left: 0;
   display: block;
-  width: 100%;
+  width: 100vw;
   height: 100px;
   background-color: #fff;
   z-index: 999999;
@@ -508,7 +514,6 @@ body {
 .header .inner {
   height: 100%;
 }
-
 
 .top-gnb {
   position: absolute;
@@ -551,8 +556,6 @@ body {
 
 /* /////.top-gnb ul li a  호버 효과 */
 
-
-
 .logo {
   position: absolute;
   left: 50%;
@@ -566,7 +569,7 @@ body {
   display: block;
   width: 146px;
   height: 45px;
-  background: url('../images/icon/logo.png') no-repeat center;
+  background: url("../images/icon/logo.png") no-repeat center;
 }
 
 .top-info {
@@ -600,12 +603,11 @@ body {
 }
 
 .top-info ul li a span {
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   font-size: 16px;
   line-height: 1;
   color: #c9ab81;
 }
-
 
 /* 검색창 */
 .r-t-icon {
@@ -615,7 +617,7 @@ body {
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: url('../images/icon/ico-header-search.png') no-repeat center;
+  background: url("../images/icon/ico-header-search.png") no-repeat center;
 }
 
 /* 창 내용 */
@@ -626,7 +628,7 @@ body {
   display: block;
   width: 100vw;
   height: 100vh;
-  background: url('../images/all-search-bg.jpg') no-repeat center;
+  background: url("../images/all-search-bg.jpg") no-repeat center;
   background-size: cover;
   padding: 50px;
   visibility: hidden;
@@ -653,7 +655,7 @@ body {
   display: inline-block;
   width: 30px;
   height: 30px;
-  background: url('../images/icon/ico-header-search-close.png') no-repeat center;
+  background: url("../images/icon/ico-header-search-close.png") no-repeat center;
   background-size: cover;
 }
 
@@ -682,7 +684,7 @@ body {
   display: block;
   width: 100%;
   height: 96px;
-  font-family: 'EB Garamond', 'Noto Serif KR';
+  font-family: "EB Garamond", "Noto Serif KR";
   font-size: 45px;
   font-weight: 600;
   color: #333;
@@ -705,7 +707,7 @@ body {
   display: block;
   width: 30px;
   height: 30px;
-  background: url('../images/icon/ico-header-search-color.png') no-repeat center;
+  background: url("../images/icon/ico-header-search-color.png") no-repeat center;
   background-size: cover;
   border: none;
 }
@@ -730,7 +732,7 @@ body {
 .search-word h3 {
   position: relative;
   display: block;
-  font-family: 'Noto Serif KR';
+  font-family: "Noto Serif KR";
   font-size: 20px;
   line-height: 30px;
   color: #333;
@@ -748,7 +750,7 @@ body {
 
 .search-word ul li a {
   position: relative;
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   font-size: 16px;
   line-height: 22px;
   color: #666;
@@ -785,7 +787,7 @@ body {
   display: inline-block;
   width: 10px;
   height: 10px;
-  background: url('../images/icon/ico-recent-word-delete.png') no-repeat center;
+  background: url("../images/icon/ico-recent-word-delete.png") no-repeat center;
   background-size: cover;
   border: none;
   margin-left: 9px;
@@ -825,11 +827,7 @@ body {
   margin-left: 0;
 }
 
-
-
-
 /* //header */
-
 
 /* main slider */
 .main-slider {
@@ -854,17 +852,17 @@ body {
 }
 
 .vs-1 {
-  background: url('../images/visual.bg.1.jpg') no-repeat center;
+  background: url("../images/visual.bg.1.jpg") no-repeat center;
   background-size: cover;
 }
 
 .vs-2 {
-  background: url('../images/visual.bg.2.jpg') no-repeat center;
+  background: url("../images/visual.bg.2.jpg") no-repeat center;
   background-size: cover;
 }
 
 .vs-3 {
-  background: url('../images/visual.bg.3.jpg') no-repeat center;
+  background: url("../images/visual.bg.3.jpg") no-repeat center;
   background-size: cover;
 }
 
@@ -875,7 +873,6 @@ body {
 .sw-visual .swiper-slide-active a {
   transform: scale(1);
 }
-
 
 .vs-text {
   position: absolute;
@@ -1036,7 +1033,8 @@ body {
   line-height: 18px;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  font-family: 'EB Garamond', 'Noto Sans KR', 'Noto Serif KR', 'Malgun Gothic', dotum, sans-serif;
+  font-family: "EB Garamond", "Noto Sans KR", "Noto Serif KR", "Malgun Gothic",
+    dotum, sans-serif;
 }
 
 .cursor-able {
@@ -1045,14 +1043,10 @@ body {
 
 /* //main slider */
 
-
 /* best art */
 .best-art {
-  position: relative;
-  display: block;
   padding-top: 180px;
 }
-
 
 .b-art-slider-box {
   position: relative;
@@ -1069,21 +1063,20 @@ body {
   height: 700px;
 }
 
-
-.b-art-pobox>a {
+.b-art-pobox > a {
   position: relative;
   display: block;
-  font-family: 'Noto Serif KR';
+  font-family: "Noto Serif KR";
   font-size: 24px;
   font-weight: 600;
   margin-top: 30px;
 }
 
-.b-art-pobox>span {
+.b-art-pobox > span {
   position: relative;
   display: block;
   font-size: 16px;
-  font-family: 'Noto Serif KR';
+  font-family: "Noto Serif KR";
   color: #c9ab81;
   margin-top: 25px;
 }
@@ -1101,14 +1094,14 @@ body {
 .b-art-pobox h5 {
   position: relative;
   display: block;
-  font-family: 'Noto Serif KR';
+  font-family: "Noto Serif KR";
   font-size: 20px;
   font-weight: 500;
   color: #333333;
 }
 
 .b-art-pobox h5 strong {
-  font-family: 'EB Garamond';
+  font-family: "EB Garamond";
   font-size: 36px;
   font-weight: 500;
   color: #333333;
@@ -1123,30 +1116,29 @@ body {
 }
 
 .pobox-1 {
-  background: url('../images/pobox_img_1.jpg') no-repeat center;
+  background: url("../images/pobox_img_1.jpg") no-repeat center;
   background-size: cover;
 }
 
 .pobox-2 {
-  background: url('../images/pobox_img_2.jpg') no-repeat center;
+  background: url("../images/pobox_img_2.jpg") no-repeat center;
   background-size: cover;
 }
 
 .pobox-3 {
-  background: url('../images/pobox_img_3.jpg') no-repeat center;
+  background: url("../images/pobox_img_3.jpg") no-repeat center;
   background-size: cover;
 }
 
 .pobox-4 {
-  background: url('../images/pobox_img_4.jpg') no-repeat center;
+  background: url("../images/pobox_img_4.jpg") no-repeat center;
   background-size: cover;
 }
 
 .pobox-5 {
-  background: url('../images/pobox_img_5.jpg') no-repeat center;
+  background: url("../images/pobox_img_5.jpg") no-repeat center;
   background-size: cover;
 }
-
 
 /* b-art-hovertag  */
 .bahybox {
@@ -1161,7 +1153,7 @@ body {
   transition: all 0.4s;
 }
 
-.pobox:hover>.bahybox {
+.pobox:hover > .bahybox {
   width: 267px;
   opacity: 1;
 }
@@ -1174,8 +1166,7 @@ body {
   background-color: rgba(255, 255, 255, 0.8);
 }
 
-
-.b-art-hovertag>.btn-type01 {
+.b-art-hovertag > .btn-type01 {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1198,11 +1189,11 @@ body {
   display: block;
   width: 20px;
   height: 20px;
-  background: url('../images/icon/ico-sight.png') no-repeat center;
+  background: url("../images/icon/ico-sight.png") no-repeat center;
 }
 
 .icon-eye:hover {
-  background: url('../images/icon/ico-sight-on.png') no-repeat center;
+  background: url("../images/icon/ico-sight-on.png") no-repeat center;
 }
 
 .icon-heart {
@@ -1210,12 +1201,12 @@ body {
   display: block;
   width: 20px;
   height: 20px;
-  background: url('../images/icon/ico-like.png') no-repeat center;
+  background: url("../images/icon/ico-like.png") no-repeat center;
   margin-left: 42px;
 }
 
 .icon-heart:hover {
-  background: url('../images/icon/ico-like-on.png') no-repeat center;
+  background: url("../images/icon/ico-like-on.png") no-repeat center;
 }
 
 .icon-heart::after {
@@ -1228,23 +1219,20 @@ body {
   background-color: #aaa;
 }
 
-
 /* 베스트 아트 nav */
 .sw-b_art-prev {
-  background: url('../images/nav\ prev.png') no-repeat center;
+  background: url("../images/nav\ prev.png") no-repeat center;
   position: absolute;
   top: 320px;
   left: -100px;
 }
 
 .sw-b_art-next {
-  background: url('../images/nav-next.png') no-repeat center;
+  background: url("../images/nav-next.png") no-repeat center;
   position: absolute;
   top: 320px;
   right: -95px;
 }
-
-
 
 /* //베스트 아트 nav */
 
@@ -1278,12 +1266,7 @@ body {
   transform: scale(1.4);
 }
 
-
-
-
-
 /* //best art */
-
 
 /* md pick */
 
@@ -1293,12 +1276,11 @@ body {
 }
 
 .md-pick .inner {
-  background: url('../images/pick-bg.jpg') no-repeat center;
+  background: url("../images/pick-bg.jpg") no-repeat center;
   background-size: cover;
   height: 1052px;
   padding: 100px 0 210px;
 }
-
 
 .art-select {
   position: relative;
@@ -1350,7 +1332,6 @@ body {
   height: 100%;
 }
 
-
 .md-mainbox {
   position: absolute;
   right: 0;
@@ -1360,8 +1341,6 @@ body {
   background-color: #fff;
   box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.13);
 }
-
-
 
 .sw-mdpick {
   position: absolute;
@@ -1388,17 +1367,17 @@ body {
 }
 
 .sw-mdpick-1 .mmimg1 {
-  background: url('../images/md_pick_img.1.jpg') no-repeat center;
+  background: url("../images/md_pick_img.1.jpg") no-repeat center;
   background-size: 100%;
 }
 
 .sw-mdpick-2 .mmimg2 {
-  background: url('../images/md_pick_img.2.jpg') no-repeat center;
+  background: url("../images/md_pick_img.2.jpg") no-repeat center;
   background-size: 100%;
 }
 
 .sw-mdpick-2 .mmimg3 {
-  background: url('../images/md_pick_img.3.jpg') no-repeat center;
+  background: url("../images/md_pick_img.3.jpg") no-repeat center;
   background-size: 100%;
 }
 
@@ -1410,24 +1389,22 @@ body {
   transform: scale(1);
 }
 
-
 /* md nav */
 .sw-mdpick-prev {
-  background: url('../images/nav\ prev.png') no-repeat center;
+  background: url("../images/nav\ prev.png") no-repeat center;
   position: absolute;
   top: 285px;
   left: -160px;
 }
 
 .sw-mdpick-next {
-  background: url('../images/nav-next.png') no-repeat center;
+  background: url("../images/nav-next.png") no-repeat center;
   position: absolute;
   top: 285px;
   right: -160px;
 }
 
 /* /// md nav */
-
 
 .md-main-text {
   position: relative;
@@ -1454,11 +1431,10 @@ body {
   }
 }
 
-
-.md-main-text>span {
+.md-main-text > span {
   position: relative;
   display: block;
-  font-family: 'Noto Serif KR';
+  font-family: "Noto Serif KR";
   font-size: 16px;
   letter-spacing: -0.7px;
   line-height: 26px;
@@ -1476,7 +1452,7 @@ body {
 .md-main-text p b {
   position: relative;
   display: block;
-  font-family: 'Noto Serif KR';
+  font-family: "Noto Serif KR";
   font-size: 36px;
   color: #333333;
   font-weight: 700;
@@ -1484,10 +1460,10 @@ body {
   margin-bottom: 30px;
 }
 
-.md-main-text p>span {
+.md-main-text p > span {
   position: relative;
   display: block;
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   font-size: 16px;
   color: #666666;
   line-height: 26px;
@@ -1506,34 +1482,29 @@ body {
 }
 
 /* ani */
-.md-mainbox .swiper-slide-active .md-main-text > span, 
-.md-mainbox .swiper-slide-active .md-main-text > p > b, 
-.md-mainbox .swiper-slide-active .md-main-text > p > span, 
+.md-mainbox .swiper-slide-active .md-main-text > span,
+.md-mainbox .swiper-slide-active .md-main-text > p > b,
+.md-mainbox .swiper-slide-active .md-main-text > p > span,
 .md-mainbox .swiper-slide-active .md-main-text a {
   animation: fadeUp 1s forwards;
-} 
+}
 
 .md-mainbox .swiper-slide-active .md-main-text > span {
-  animation-delay:0.05s;
+  animation-delay: 0.05s;
 }
 .md-mainbox .swiper-slide-active .md-main-text > p > b {
-  animation-delay:0.1s;
+  animation-delay: 0.1s;
 }
 .md-mainbox .swiper-slide-active .md-main-text > p > span {
-  animation-delay:0.15s;
+  animation-delay: 0.15s;
 }
-
 
 /* //md pick */
 
-
 /* new art */
 .new-art {
-  position: relative;
-  display: block;
   padding-top: 100px;
 }
-
 
 .n-art-slider-box {
   position: relative;
@@ -1560,38 +1531,37 @@ body {
 }
 
 .nai-1 {
-  background: url('../images/newart_img_1.jpg') no-repeat center;
+  background: url("../images/newart_img_1.jpg") no-repeat center;
   background-size: cover;
 }
 
 .nai-2 {
-  background: url('../images/newart_img_2.jpg') no-repeat center;
+  background: url("../images/newart_img_2.jpg") no-repeat center;
   background-size: cover;
 }
 
 .nai-3 {
-  background: url('../images/newart_img_3.jpg') no-repeat center;
+  background: url("../images/newart_img_3.jpg") no-repeat center;
   background-size: cover;
 }
 
 .nai-4 {
-  background: url('../images/newart_img_4.jpg') no-repeat center;
+  background: url("../images/newart_img_4.jpg") no-repeat center;
   background-size: cover;
 }
 
 .nai-5 {
-  background: url('../images/newart_img_5.jpg') no-repeat center;
+  background: url("../images/newart_img_5.jpg") no-repeat center;
   background-size: cover;
 }
 
 .newart-textbox {
   position: absolute;
-  top: 545px;
+  top: 550px;
   left: 0;
   display: block;
   width: 100%;
 }
-
 
 .nat1 {
   position: relative;
@@ -1604,7 +1574,7 @@ body {
 .nat1 span {
   position: relative;
   display: block;
-  font-family: 'Noto Serif KR';
+  font-family: "Noto Serif KR";
   letter-spacing: -0.7px;
   color: #c9ab81;
   margin-bottom: 10px;
@@ -1613,7 +1583,7 @@ body {
 .nat1 h4 {
   position: relative;
   display: block;
-  font-family: 'Noto Serif KR';
+  font-family: "Noto Serif KR";
   font-size: 24px;
   font-weight: 600;
   color: #333;
@@ -1623,7 +1593,7 @@ body {
   position: relative;
   display: block;
   height: 78px;
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
   line-height: 26px;
   color: #666;
   margin-top: 25px;
@@ -1640,14 +1610,14 @@ body {
 
 /* 뉴 아트 nav */
 .sw-n_art-prev {
-  background: url('../images/nav\ prev.png') no-repeat center;
+  background: url("../images/nav\ prev.png") no-repeat center;
   position: absolute;
   top: 382px;
   left: -100px;
 }
 
 .sw-n_art-next {
-  background: url('../images/nav-next.png') no-repeat center;
+  background: url("../images/nav-next.png") no-repeat center;
   position: absolute;
   top: 382px;
   right: -100px;
@@ -1656,7 +1626,6 @@ body {
 /* //뉴 아트 nav */
 
 /* //new art */
-
 
 /* more gallery */
 .more-gallery {
@@ -1668,7 +1637,7 @@ body {
   position: relative;
   display: block;
   height: 663px;
-  background: url('../images/gallery-bg.jpg') no-repeat center;
+  background: url("../images/gallery-bg.jpg") no-repeat center;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -1698,7 +1667,7 @@ body {
 .gallbox p {
   position: relative;
   display: block;
-  font-family: 'Noto Serif KR';
+  font-family: "Noto Serif KR";
   font-size: 18px;
   font-weight: 500;
   letter-spacing: -0.5px;
@@ -1716,18 +1685,15 @@ body {
   line-height: 50px;
 }
 
-.gallbox a>span {
+.gallbox a > span {
   font-size: 18px;
   line-height: 50px;
 }
 
 /* //more gallery */
 
-
 /* review */
 .review {
-  position: relative;
-  display: block;
   padding: 150px 0 160px;
 }
 
@@ -1775,7 +1741,7 @@ body {
   display: block;
   width: 100%;
   height: 380px;
-  background: url('../images/rev_img_1.png') no-repeat center;
+  background: url("../images/rev_img_1.png") no-repeat center;
   background-size: cover;
 }
 
@@ -1784,7 +1750,7 @@ body {
   display: block;
   width: 100%;
   height: 380px;
-  background: url('../images/rev_img_2.png') no-repeat center;
+  background: url("../images/rev_img_2.png") no-repeat center;
   background-size: cover;
 }
 
@@ -1793,7 +1759,7 @@ body {
   display: block;
   width: 100%;
   height: 380px;
-  background: url('../images/rev_img_3.png') no-repeat center;
+  background: url("../images/rev_img_3.png") no-repeat center;
   background-size: cover;
 }
 
@@ -1818,7 +1784,7 @@ body {
 }
 
 .re-text-sml h5 span::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1855,14 +1821,14 @@ body {
 
 /* 리뷰 nav */
 .sw-r_art-prev {
-  background: url('../images/nav\ prev.png') no-repeat center;
+  background: url("../images/nav\ prev.png") no-repeat center;
   position: absolute;
   top: 268px;
   left: -100px;
 }
 
 .sw-r_art-next {
-  background: url('../images/nav-next.png') no-repeat center;
+  background: url("../images/nav-next.png") no-repeat center;
   position: absolute;
   top: 268px;
   right: -100px;
@@ -1889,11 +1855,11 @@ body {
 
 /* //review */
 
-
 /* footer */
 .footer {
   position: relative;
   display: block;
+  width: 100%;
   height: 264px;
   padding: 60px 0;
   background-color: #272727;
@@ -1927,7 +1893,7 @@ body {
   color: #888888;
 }
 
-.footer .inner>p {
+.footer .inner > p {
   position: relative;
   display: block;
   margin-top: 20px;
@@ -1936,7 +1902,7 @@ body {
 }
 
 .footer .inner p span {
-  font-family: 'Noto Sans KR';
+  font-family: "Noto Sans KR";
 }
 
 .float-bar {
@@ -1949,7 +1915,7 @@ body {
 }
 
 .copyright {
-  font-family: 'EB Garamond';
+  font-family: "EB Garamond";
   font-weight: 500;
   line-height: 26px;
   letter-spacing: -0.5px;
@@ -1984,7 +1950,7 @@ body {
   top: 50%;
   width: 10px;
   height: 15px;
-  background: url('../images/ico-go-top.png') no-repeat center;
+  background: url("../images/ico-go-top.png") no-repeat center;
   margin-left: -5px;
   margin-top: -7.5px;
 }
