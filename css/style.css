@@ -38,20 +38,19 @@ body {
 .wrap {
   position: relative;
   display: block;
-  padding-top: 100px;
 }
 
 .inner {
   position: relative;
   display: block;
-  width: 1820px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 section {
   position: relative;
   display: block;
-  width: 100vw;
+  width: 100%;
+  padding: 0 50px;
 }
 
 /* .clearfix::after {
@@ -275,8 +274,9 @@ section {
 
 .l-t-icon {
   position: absolute;
+  top: 50%;
   left: 0;
-  top: 43px;
+  transform: translateY(-50%);
   display: inline-block;
   width: 23px;
   height: 13px;
@@ -500,9 +500,10 @@ section {
   width: 100vw;
   height: 100px;
   background-color: #fff;
-  z-index: 999999;
+  padding: 0 50px;
 
-  transition: all 0.5s;
+  z-index: 999999;
+  transition: height 0.5s;
   visibility: visible;
 }
 
@@ -512,7 +513,24 @@ section {
 }
 
 .header .inner {
+  width: 100%;
   height: 100%;
+  margin: 0;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo a {
+  position: relative;
+  display: block;
+  width: 146px;
+  height: 45px;
+  background: url("../images/icon/logo.png") no-repeat center;
 }
 
 .top-gnb {
@@ -553,24 +571,7 @@ section {
   font-weight: 600;
   color: #000;
 }
-
 /* /////.top-gnb ul li a  호버 효과 */
-
-.logo {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -73px;
-  margin-top: -22.5px;
-}
-
-.logo a {
-  position: relative;
-  display: block;
-  width: 146px;
-  height: 45px;
-  background: url("../images/icon/logo.png") no-repeat center;
-}
 
 .top-info {
   position: absolute;
@@ -612,8 +613,9 @@ section {
 /* 검색창 */
 .r-t-icon {
   position: absolute;
+  top: 50%;
   right: 0;
-  top: 44px;
+  transform: translateY(-50%);
   display: inline-block;
   width: 20px;
   height: 20px;
@@ -827,12 +829,37 @@ section {
   margin-left: 0;
 }
 
+/* ===== 반응형 ===== */
+@media all and (max-width: 1600px) {
+  .top-gnb ul li {
+    margin-left: 25px;
+  }
+  .top-info ul li {
+    margin-left: 25px;
+  }
+}
+@media all and (max-width: 1440px) {
+  .header {
+    height: 70px;
+  }
+  .main-slider {
+    padding-top: 70px;
+  }
+  .top-gnb {
+    display: none;
+  }
+  .top-info {
+    display: none;
+  }
+}
+
 /* //header */
 
 /* main slider */
 .main-slider {
   position: relative;
   display: block;
+  padding-top: 100px;
 }
 
 .sw-visual {
@@ -962,6 +989,7 @@ section {
   position: relative;
   display: block;
   font-size: 16px;
+  font-weight: 700;
   line-height: 22px;
   color: #333;
 }
@@ -1039,6 +1067,12 @@ section {
 
 .cursor-able {
   cursor: pointer;
+}
+/* ===== 반응형 ===== */
+@media all and (max-width: 1440px) {
+  .main-slider {
+    padding-top: 70px;
+  }
 }
 
 /* //main slider */
@@ -1694,7 +1728,7 @@ section {
 
 /* review */
 .review {
-  padding: 150px 0 160px;
+  padding: 150px 50px 160px;
 }
 
 .r-slider-box {
