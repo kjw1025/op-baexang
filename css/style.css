@@ -54,6 +54,11 @@ section {
   width: 100%;
   padding: 0 50px;
 }
+@media all and (max-width: 1440px) {
+  section {
+    padding: 0 20px;
+  }
+}
 
 /* .clearfix::after {
   content: "";
@@ -269,6 +274,34 @@ section {
     opacity: 1;
     visibility: visible;
     width: 170px;
+  }
+}
+/* 반응형 */
+@media all and (max-width: 1025px) {
+  .title-txt p {
+    font-size: 18px;
+  }
+  .title-txt h2 {
+    font-size: 42px;
+    padding: 0 40px;
+  }
+}
+@media all and (max-width: 770px) {
+  .title-txt p {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+    line-height: 1.5;
+  }
+  .title-txt h2 {
+    padding: 0 20px;
+    font-size: 32px;
+    letter-spacing: 3px;
+  }
+  .title-txt h2::before {
+    content: none;
+  }
+  .title-txt h2::after {
+    content: none;
   }
 }
 /* ------------------------------------------------------------------------------------ */
@@ -519,7 +552,7 @@ section {
   padding: 0 50px;
 
   z-index: 999999;
-  transition: height 0.5s;
+  transition: all 0.5s;
   visibility: visible;
 }
 
@@ -675,7 +708,7 @@ section {
   top: 0;
   left: 0;
   display: block;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background: url("../images/all-search-bg.jpg") no-repeat center;
   background-size: cover;
@@ -692,6 +725,10 @@ section {
 }
 
 .all-search-wrap .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.8);
@@ -709,12 +746,10 @@ section {
 }
 
 .all-search-main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   display: block;
-  width: 1200px;
+  max-width: 1160px;
+  width: calc(100% - 100px);
 }
 
 .search-box {
@@ -783,18 +818,10 @@ section {
   display: block;
   font-family: "Noto Serif KR";
   font-size: 20px;
+  font-weight: 700;
   line-height: 30px;
   color: #333;
   padding-bottom: 30px;
-}
-
-.search-word ul {
-  position: relative;
-  display: block;
-}
-
-.search-word ul li {
-  margin-top: 24px;
 }
 
 .search-word ul li a {
@@ -806,6 +833,8 @@ section {
 }
 
 .recent-searches {
+  position: relative;
+  display: block;
   width: 33%;
   padding-right: 60px;
 }
@@ -815,6 +844,7 @@ section {
   display: block;
   width: 100%;
   padding-right: 100px;
+  margin-top: 24px;
 }
 
 .recent-searches li:nth-child(2) {
@@ -844,8 +874,16 @@ section {
 }
 
 .popular-searches {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+
   width: 66%;
   padding-left: 60px;
+}
+.popular-searches h3 {
+  display: block;
+  width: 100%;
 }
 
 .popular-searches li {
@@ -853,27 +891,56 @@ section {
   display: inline-block;
   min-width: 28%;
   margin-left: 2%;
+  margin-bottom: 24px;
 }
 
-.popular-searches li:nth-child(2) {
-  margin-top: 0;
-  margin-left: 0;
+/* 반응형 */
+@media all and (max-width: 1440px) {
+  .all-search-wrap {
+    padding: 20px;
+  }
+  .all-search-main {
+    width: calc(100% - 40px);
+  }
 }
-
-.popular-searches li:nth-child(3) {
-  margin-top: 0;
-}
-
-.popular-searches li:nth-child(4) {
-  margin-top: 0;
-}
-
-.popular-searches li:nth-child(5) {
-  margin-left: 0;
-}
-
-.popular-searches li:nth-child(8) {
-  margin-left: 0;
+@media all and (max-width: 1025px) {
+  .search-word {
+    flex-direction: column;
+    margin-top: 40px;
+  }
+  .search-word h3 {
+    font-size: 15px;
+    padding-bottom: 15px;
+  }
+  .search-word ul li a {
+    font-size: 14px;
+  }
+  .search-txt {
+    height: 60px;
+    font-size: 30px;
+  }
+  .vertical-bar {
+    display: none;
+  }
+  /* -- */
+  .recent-searches {
+    width: 100%;
+  }
+  .recent-searches li {
+    margin-top: 5px;
+  }
+  /* -- */
+  .popular-searches {
+    width: 100%;
+    padding-left: 0;
+  }
+  .popular-searches h3 {
+    margin-top: 30px;
+  }
+  .popular-searches li {
+    min-width: auto;
+    margin-bottom: 0;
+  }
 }
 /* ========= /// 검색창 ========= */
 /* ------------------------------------------------------------------------------------ */
@@ -1165,8 +1232,8 @@ section {
 .b-art-pobox {
   position: relative;
   display: block;
-  width: 327px;
-  height: 700px;
+  width: 100%;
+  height: 100%;
 }
 
 .b-art-pobox > a {
@@ -1217,8 +1284,10 @@ section {
 .pobox {
   position: relative;
   display: block;
-  width: 327px;
-  height: 450px;
+  width: 100%;
+  min-height: 450px;
+
+  padding: 30px;
 }
 
 .pobox-1 {
@@ -1253,7 +1322,7 @@ section {
   left: 30px;
   display: block;
   width: 0px;
-  height: 390px;
+  height: 100%;
   overflow: hidden;
   opacity: 0;
   transition: all 0.4s;
@@ -1370,6 +1439,20 @@ section {
 .swiper-pagination-bullet-active {
   background-color: #333;
   transform: scale(1.4);
+}
+/* 반응형 */
+@media all and (max-width: 1600px) {
+  .sw-b_art-prev {
+    display: none;
+  }
+  .sw-b_art-next {
+    display: none;
+  }
+}
+@media all and (max-width: 1440px) {
+  .b-art-slider-box {
+    width: 100%;
+  }
 }
 
 /* ========= ///best art ========= */

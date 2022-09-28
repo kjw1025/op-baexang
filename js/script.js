@@ -108,8 +108,8 @@ window.onload = function () {
 
   // 베스트 아트 슬라이드
   let sw_best_art = new Swiper(".sw-best_art", {
-    slidesPerView: 4,
-    spaceBetween: 10,
+    slidesPerView: 2,
+    spaceBetween: 20,
 
     // nav
     navigation: {
@@ -120,6 +120,17 @@ window.onload = function () {
     //pg
     pagination: {
       el: ".b-art-pg",
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1440: {
+        slidesPerView: 4, //브라우저가 1024보다 클 때
+        spaceBetween: 30,
+      },
     },
   });
 
