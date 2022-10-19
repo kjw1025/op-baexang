@@ -1117,17 +1117,17 @@ section {
 }
 
 .vs-1 {
-  background: url("../images/visual.bg.1.jpg") no-repeat center;
+  background: url("../images/visual_bg_1.jpg") no-repeat center;
   background-size: cover;
 }
 
 .vs-2 {
-  background: url("../images/visual.bg.2.jpg") no-repeat center;
+  background: url("../images/visual_bg_2.jpg") no-repeat center;
   background-size: cover;
 }
 
 .vs-3 {
-  background: url("../images/visual.bg.3.jpg") no-repeat center;
+  background: url("../images/visual_bg_3.jpg") no-repeat center;
   background-size: cover;
 }
 
@@ -1361,6 +1361,8 @@ section {
     font-size: 16px;
   }
 }
+@media all and (max-width: 500px) {
+}
 
 /* ========= ///main slider ========= */
 /* ------------------------------------------------------------------------------------ */
@@ -1544,14 +1546,14 @@ section {
 
 /* 베스트 아트 nav */
 .sw-b_art-prev {
-  background: url("../images/nav\ prev.png") no-repeat center;
+  background: url("../images/nav_prev.png") no-repeat center;
   position: absolute;
   top: 320px;
   left: -100px;
 }
 
 .sw-b_art-next {
-  background: url("../images/nav-next.png") no-repeat center;
+  background: url("../images/nav_next.png") no-repeat center;
   position: absolute;
   top: 320px;
   right: -95px;
@@ -1571,6 +1573,7 @@ section {
   left: 50%;
   transform: translateX(-50%);
   display: block;
+  white-space: nowrap;
 }
 
 /* sw b-art-pg */
@@ -1642,24 +1645,26 @@ section {
   font-weight: 500 !important;
 }
 
+/* md all wrap */
 .md-All-wrap {
   position: relative;
   display: block;
-  width: 1400px;
+  max-width: 1400px;
+  width: calc(100% - 100px);
   height: 560px;
-  /* background-color: coral; */
   margin: 0 auto;
 }
 
+/* 그림작품 */
 .painting-wrap {
   position: absolute;
   top: 0;
   left: 0;
   display: block;
   width: 100%;
-  height: 100%;
 }
 
+/* 사진작품 */
 .photo-wrap {
   position: absolute;
   top: 0;
@@ -1669,25 +1674,44 @@ section {
   height: 100%;
 }
 
+/* bg slide */
 .md-mainbox {
   position: absolute;
-  right: 0;
+  left: 60px;
   display: block;
-  width: 1340px;
+  width: calc(100% - 60px);
   height: 500px;
   background-color: #fff;
   box-shadow: 1px 3px 13px 0px rgba(0, 0, 0, 0.13);
+  padding: 30px 80px 30px 700px;
 }
-
+/* img slide */
 .sw-mdpick {
   position: absolute;
   top: 60px;
   left: 0px;
   display: block;
-  width: 50%;
+  width: 640px;
   height: 500px;
   box-shadow: 1px 1px 10px rgb(0 0 0 / 20%);
   z-index: 9;
+}
+
+.sw-mdpick img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  transform: scale(1.1);
+  transition: all 3s;
+}
+
+.sw-mdpick .swiper-slide {
+  overflow: hidden;
+}
+.sw-mdpick .swiper-slide-active img {
+  transform: scale(1);
 }
 
 .md-main-img {
@@ -1697,45 +1721,17 @@ section {
   display: block;
   width: 100%;
   height: 100%;
-  background-size: 100%;
-
-  transform: scale(1.1);
-  transition: all 3s;
-}
-
-.sw-mdpick-1 .mmimg1 {
-  background: url("../images/md_pick_img.1.jpg") no-repeat center;
-  background-size: 100%;
-}
-
-.sw-mdpick-2 .mmimg2 {
-  background: url("../images/md_pick_img.2.jpg") no-repeat center;
-  background-size: 100%;
-}
-
-.sw-mdpick-2 .mmimg3 {
-  background: url("../images/md_pick_img.3.jpg") no-repeat center;
-  background-size: 100%;
-}
-
-.sw-mdpick .swiper-slide {
-  overflow: hidden;
-}
-
-.sw-mdpick .swiper-slide-active .md-main-img {
-  transform: scale(1);
 }
 
 /* md nav */
 .sw-mdpick-prev {
-  background: url("../images/nav\ prev.png") no-repeat center;
+  background: url("../images/nav_prev.png") no-repeat center;
   position: absolute;
   top: 285px;
   left: -160px;
 }
-
 .sw-mdpick-next {
-  background: url("../images/nav-next.png") no-repeat center;
+  background: url("../images/nav_next.png") no-repeat center;
   position: absolute;
   top: 285px;
   right: -160px;
@@ -1748,10 +1744,8 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
-  height: 100%;
-  float: right;
-  padding: 0 80px 0 60px;
+  width: 100%;
+  min-height: 450px;
 }
 
 @keyframes fadeUp {
@@ -1836,6 +1830,54 @@ section {
   animation-delay: 0.15s;
 }
 
+/* 반응형 */
+@media all and (max-width: 1600px) {
+  .md-mainbox {
+    padding-left: 640px;
+  }
+}
+@media all and (max-width: 1440px) {
+  .sw-mdpick {
+    width: 50%;
+  }
+  .md-mainbox {
+    padding-left: 53%;
+  }
+}
+@media all and (max-width: 1025px) {
+  .sw-mdpick {
+    width: 52%;
+    height: 410px;
+  }
+  .md-mainbox {
+    height: 410px;
+    padding-left: 53%;
+  }
+  .md-main-text {
+    min-height: auto;
+  }
+  .md-main-text p b {
+    font-size: 24px;
+  }
+}
+@media all and (max-width: 780px) {
+  .md-All-wrap {
+    width: calc(100% - 40px);
+  }
+  .sw-mdpick {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  .md-mainbox {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 30px 20px;
+  }
+}
 /* ========= ///md pick ========= */
 /* ------------------------------------------------------------------------------------ */
 /* ========= new art ========= */
@@ -1855,7 +1897,7 @@ section {
 .new-slide-box {
   position: relative;
   display: block;
-  width: 450px;
+  width: 100%;
   height: 800px;
   background-color: rgb(255, 255, 255);
 }
@@ -1933,6 +1975,7 @@ section {
   font-family: "Noto Sans KR";
   line-height: 26px;
   color: #666;
+  padding-right: 10px;
   margin-top: 25px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1947,20 +1990,26 @@ section {
 
 /* 뉴 아트 nav */
 .sw-n_art-prev {
-  background: url("../images/nav\ prev.png") no-repeat center;
+  background: url("../images/nav_prev.png") no-repeat center;
   position: absolute;
   top: 382px;
   left: -100px;
 }
 
 .sw-n_art-next {
-  background: url("../images/nav-next.png") no-repeat center;
+  background: url("../images/nav_next.png") no-repeat center;
   position: absolute;
   top: 382px;
   right: -100px;
 }
 
 /* //뉴 아트 nav */
+/* 반응형 */
+@media all and (max-width: 1440px) {
+  .n-art-slider-box {
+    width: 100%;
+  }
+}
 
 /* ========= //new art ========= */
 /* ------------------------------------------------------------------------------------ */
@@ -2027,6 +2076,14 @@ section {
   line-height: 50px;
 }
 
+@media all and (max-width: 780px) {
+  .gallbox span {
+    font-size: 30px;
+  }
+  .gallbox p {
+    font-size: 16px;
+  }
+}
 /* ========= ///more gallery ========= */
 /* ------------------------------------------------------------------------------------ */
 /* ========= review =========*/
@@ -2158,14 +2215,14 @@ section {
 
 /* 리뷰 nav */
 .sw-r_art-prev {
-  background: url("../images/nav\ prev.png") no-repeat center;
+  background: url("../images/nav_prev.png") no-repeat center;
   position: absolute;
   top: 268px;
   left: -100px;
 }
 
 .sw-r_art-next {
-  background: url("../images/nav-next.png") no-repeat center;
+  background: url("../images/nav_next.png") no-repeat center;
   position: absolute;
   top: 268px;
   right: -100px;
@@ -2190,6 +2247,12 @@ section {
   display: block;
 }
 
+@media all and (max-width: 1440px) {
+  .r-slider-box {
+    width: 100%;
+  }
+}
+
 /* ========= ///review ========= */
 /* ------------------------------------------------------------------------------------ */
 /* ========= footer ========= */
@@ -2197,7 +2260,6 @@ section {
   position: relative;
   display: block;
   width: 100%;
-  height: 264px;
   padding: 60px 0;
   background-color: #272727;
 }
@@ -2211,21 +2273,23 @@ section {
   line-height: 26px;
   color: #888888;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .footer .inner ul {
+  position: relative;
+  display: flex;
+
   margin-bottom: 30px;
 }
 
 .footer .inner ul li {
   position: relative;
   display: block;
-  float: left;
   margin-right: 25px;
 }
 
 .footer .inner ul li a {
-  font-size: 16px;
   font-weight: 500;
   color: #888888;
 }
@@ -2242,6 +2306,13 @@ section {
   font-family: "Noto Sans KR";
 }
 
+.company-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+.company-info span {
+  white-space: nowrap;
+}
 .float-bar {
   position: relative;
   display: inline-block;
@@ -2290,6 +2361,21 @@ section {
   background: url("../images/ico-go-top.png") no-repeat center;
   margin-left: -5px;
   margin-top: -7.5px;
+}
+
+@media all and (max-width: 1440px) {
+  .footer .inner {
+    width: 100%;
+    margin-left: 20px;
+  }
+}
+@media all and (max-width: 1025px) {
+  .footer .inner {
+    font-size: 14px;
+  }
+  .copyright {
+    font-size: 16px;
+  }
 }
 
 /* ========= ///footer ========= */

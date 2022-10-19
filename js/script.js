@@ -71,7 +71,7 @@ window.onload = function () {
 
   $(window).on("mousewheel", function (e) {
     let wheel = e.originalEvent.wheelDelta;
-    console.log(wheel);
+    // console.log(wheel);
 
     if (wheel < 0) {
       header.addClass("header-close");
@@ -117,7 +117,7 @@ window.onload = function () {
 
   // 베스트 아트 슬라이드
   let sw_best_art = new Swiper(".sw-best_art", {
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 20,
 
     // nav
@@ -132,6 +132,9 @@ window.onload = function () {
     },
 
     breakpoints: {
+      500: {
+        slidesPerView: 2,
+      },
       768: {
         slidesPerView: 3,
         spaceBetween: 20,
@@ -288,20 +291,32 @@ window.onload = function () {
 
   // 뉴 아트 슬라이드
   let sw_new_art = new Swiper(".sw-new_art", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
-    slidesPerGroup: 3,
+    slidesPerGroup: 1,
 
     // nav
     navigation: {
       nextEl: ".sw-n_art-next",
       prevEl: ".sw-n_art-prev",
     },
+    breakpoints: {
+      700: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+        slidesPerGroup: 2,
+      },
+      1025: {
+        slidesPerView: 3, //브라우저가 x보다 클 때
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+      },
+    },
   });
 
   // 리뷰 슬라이드
   let sw_rev = new Swiper(".sw-rev", {
-    slidesPerView: 3,
+    slidesPerView: 1,
     spaceBetween: 30,
 
     // nav
@@ -313,6 +328,17 @@ window.onload = function () {
     //pg
     pagination: {
       el: ".r-pg",
+    },
+
+    breakpoints: {
+      700: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1025: {
+        slidesPerView: 3, //브라우저가 x보다 클 때
+        spaceBetween: 30,
+      },
     },
   });
 };
