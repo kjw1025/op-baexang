@@ -1,6 +1,6 @@
 ## 백상갤러리 clone coding
 
-### 프로젝트
+### 프로젝트 (반응형 완료)
 이 사이트 에서 가장 어려웠던 것은 md pick 파트에서 슬라이드4개를 연결하는것과, 셀렉터와 연동해 탭메뉴 처럼 작동하게 하는것이 었습니다.
 ![image](https://user-images.githubusercontent.com/107607247/196359044-78c1d8e2-ec07-405b-b6bd-0af000eb182c.png)
 해결방법은 swiper API 소스들을 보고 원본 사이트의 스크립트를 참조하여서 풀었습니다.
