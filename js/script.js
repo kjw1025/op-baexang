@@ -33,23 +33,38 @@ $(document).ready(function () {
     },
     offset: "10%",
   });
+
+  let depth2 = $(".submenu");
+  let mainMenu = $(".l-m-w-inner > ul > li > a");
+  // 메뉴기능
+  $.each(mainMenu, function (index) {
+    // 클릭 버전
+    $(this).click(function (event) {
+      // href 막기
+      event.preventDefault();
+      depth2.eq(index).toggleClass("submenu-responsive");
+    });
+  });
+
+  $(window).resize(function () {
+    if ($(window).width() < 770) {
+    }
+  });
 });
 
 window.onload = function () {
   AOS.init();
 
-  // 메뉴 오픈 기능
+  // 메뉴 오픈기능
   $(".l-t-icon").click(function (e) {
     e.preventDefault();
-    $(".left-menu-wrap").toggleClass("left-menu-wrap-open");
-    $(".left-menu-dim").toggleClass("left-menu-dim-open");
+    $(".left-menu-wrap").addClass("left-menu-wrap-open");
+    $(".leftSide-menu-wrap").addClass("leftSide-menu-wrap-open");
   });
-
-  // 메뉴 닫기 기능
   $(".close-btn").click(function (e) {
     e.preventDefault();
     $(".left-menu-wrap").removeClass("left-menu-wrap-open");
-    $(".left-menu-dim").removeClass("left-menu-dim-open");
+    $(".leftSide-menu-wrap").removeClass("leftSide-menu-wrap-open");
   });
 
   // all-search
