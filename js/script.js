@@ -34,26 +34,29 @@ $(document).ready(function () {
     offset: "10%",
   });
 
+  // 메뉴기능
   let depth2 = $(".submenu");
   let mainMenu = $(".l-m-w-inner > ul > li > a");
-  // 메뉴기능
-  $.each(mainMenu, function (index) {
-    // 클릭 버전
-    $(this).click(function (event) {
-      // href 막기
-      event.preventDefault();
-      depth2.eq(index).toggleClass("submenu-responsive");
-    });
-  });
+
+  function menuResponsive() {
+    if ($(window).width() < 770) {
+      depth2 = $(".submenu");
+      mainMenu = $(".l-m-w-inner > ul > li > a");
+      $.each(mainMenu, function (index) {
+        // 클릭 버전
+        $(this).click(function (event) {
+          // href 막기
+          event.preventDefault();
+          depth2.eq(index).toggleClass("submenu-responsive");
+        });
+      });
+    }
+  }
+  menuResponsive();
 
   $(window).resize(function () {
-    if ($(window).width() < 770) {
-    }
+    menuResponsive();
   });
-});
-
-window.onload = function () {
-  AOS.init();
 
   // 메뉴 오픈기능
   $(".l-t-icon").click(function (e) {
@@ -80,6 +83,10 @@ window.onload = function () {
     e.preventDefault();
     allSearch.removeClass("all-search-wrap-open");
   });
+});
+
+window.onload = function () {
+  AOS.init();
 
   // 스크롤에 따른 헤더 on/off 기능
   let header = $(".header");
